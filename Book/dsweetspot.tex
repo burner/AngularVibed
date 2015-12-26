@@ -1,0 +1,155 @@
+\documentclass[a4paper,openright,BCOR20mm]{scrbook}
+
+\usepackage{color}
+\usepackage{listings}
+
+\lstdefinelanguage{d}{
+	morekeywords={abstract,alias,align,asm,assert,auto,body,bool,break,byte,
+		case,cast,catch,cdouble,cent,cfloat,char,class,const,continue,creal,
+		dchar,debug,default,delegate,delete,deprecated,do,double,else,enum,
+		export,extern,false,final,finally,float,for,foreach,foreach_reverse,
+		function,goto,idouble,if,ifloat,immutable,import,in,inout,int,
+		interface,invariant,ireal,is,lazy,long,macro,mixin,module,new,nothrow,
+		null,out,override,package,pragma,private,protected,public,pure,real,
+		ref,return,scope,shared,short,static,struct,string,wstring,dstring,
+		super,switch,synchronized,template,this,throw,true,try,typedef,typeid,
+		typeof,ubyte,ucent,uint,ulong,union,unittest,ushort,version,void,
+		volatile,wchar,while,with,size_t,hash_t
+	},
+	sensitive=True,
+	morecomment=[l]{//},
+	morecomment=[s]{/\*}{\*/},
+	morestring=[b]"
+}
+
+\lstset{
+	language=d,
+	basicstyle=\footnotesize\ttfamily, % Standardschrift
+	numbers=left,               % Ort der Zeilennummern
+	numberstyle=\tiny,          % Stil der Zeilennummern
+	%stepnumber=2,               % Abstand zwischen den Zeilennummern
+	captionpos=b,
+	numbersep=5pt,              % Abstand der Nummern zum Text
+	tabsize=4,                  % Groesse von Tabs
+	extendedchars=true,         %
+	breaklines=true,            % Zeilen werden Umgebrochen
+	showspaces=false,           % Leerzeichen anzeigen ?
+	showtabs=false,             % Tabs anzeigen ?
+	%frame=b,
+	rulecolor=\color[cmyk]{0.0, 0.0, 0.0, 0.316},
+	xleftmargin=17pt,
+	%xleftmargin=0pt,
+	framexleftmargin=17pt,
+	framexrightmargin=5pt,
+	framexbottommargin=4pt,
+	keywordstyle=\color{blue},          % keyword style
+	commentstyle=\color{dkgreen},       % comment style
+	stringstyle=\color{mauve},         % string literal style
+	showstringspaces=false,    % Leerzeichen in Strings anzeigen ?        
+	escapeinside={/+}{+/},
+	title=\lstname
+}
+
+\usepackage[english]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[hidelinks]{hyperref}
+\usepackage[
+    backend=biber,
+    style=authoryear-icomp,
+    sortlocale=de_DE,
+    natbib=true,
+    url=false, 
+    doi=true,
+    style=numeric,
+    eprint=false,
+	backref
+]{biblatex}
+\addbibresource{biblio.bib}
+
+%\usepackage[miniindex]{authorindex}
+
+\usepackage[acronym]{glossaries}
+\input{glossary.gls}
+\input{acronyms.gls}
+
+%\makeindex
+\makenoidxglossaries
+\usepackage[xindy]{imakeidx}
+
+\author{Robert burner Schadek}
+\title{D Sweetspot}
+\subtitle{Using D's Standard Library Phobos to Create the Perfect XML Parser}
+
+\begin{document}
+\maketitle
+\tableofcontents
+
+\chapter{Introduction}
+Very important shit \gls{gdc} \cite{Alexandrescu:2010}.
+
+\chapter{Getting Started}
+In this book the D standard library Phobos is used to create a replacement for
+the XML facilities given in std.xml;
+Performance is a crucial part when it comes to the development of an XML parser.
+Nobody wants to use a slow XML parser.
+To keep an eye on the performance of the parser we need test data to
+benchmark.
+Good test data is hard to come by, therefore we will at least partially,
+create our own.
+Listing \ref{lst:50000csv} shows a few lines of 50000 lines of \gls{csv} of
+personal data.
+%\lstinputlisting[label=lst:50000csv,caption={50000 Lines of \gls{csv}}]{5.csv}
+This listing allows us to get an idea of what data we can accept.
+We will use std.csv to parse that data and then use this data to generate
+\gls{xml} files of different sizes.
+\lstinputlisting[label=lst:csvexample1_1,caption={struct to store csv data in.},lastline=14]{csvexample1.d}
+The lines \ref{lst:csvexample1_beginmember} to \ref{lst:csvexample1_endmember}
+of Listing \ref{lst:csvexample1_1} show the names of the values present in the csv
+file.
+\gls{ctfe}
+
+%
+% APPENDIX
+%
+
+\chapter*{Appendix}
+\appendix
+\phantomsection \label{appendix}
+\addcontentsline{toc}{chapter}{Appendix}
+\cleardoublepage
+
+\phantomsection\label{glossary}
+\addcontentsline{toc}{section}{Glossary}
+\printnoidxglossary
+
+\cleardoublepage
+\phantomsection\label{acronyms}
+\addcontentsline{toc}{section}{Acronyms}
+\printnoidxglossary[type=acronym]
+
+\cleardoublepage
+\phantomsection\label{figures}
+\addcontentsline{toc}{section}{Figures}
+\listoffigures
+ 
+\cleardoublepage
+\phantomsection\label{tables}
+\addcontentsline{toc}{section}{Tables}
+\listoftables
+
+\cleardoublepage
+\phantomsection\label{listings}
+\addcontentsline{toc}{section}{Listings}
+\lstlistoflistings
+
+\cleardoublepage
+\phantomsection\label{bibliography}
+\addcontentsline{toc}{section}{Bibliography}
+%\bibliographystyle{alpha}
+%\bibliography{biblio}
+\printbibliography
+
+%\chapter*{Appearances of Authors}
+%\printauthorindex
+
+\end{document}

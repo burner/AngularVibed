@@ -1,0 +1,5 @@
+\newglossaryentry{gdc}
+{
+  name=GNU D Compiler,
+  description={A D Compiler using the GCC Backend.}
+}
