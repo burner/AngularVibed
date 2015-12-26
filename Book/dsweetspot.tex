@@ -77,8 +77,8 @@
 \usepackage[xindy]{imakeidx}
 
 \author{Robert burner Schadek}
-\title{D Sweetspot}
-\subtitle{Using D's Standard Library Phobos to Create the Perfect XML Parser}
+\title{Sweetspot}
+\subtitle{Creating Awesome Single Page Application with AngularJS vibe.d without HTML and JavaScript}
 
 \begin{document}
 \maketitle
@@ -88,24 +88,6 @@
 Very important shit \gls{gdc} \cite{Alexandrescu:2010}.
 
 \chapter{Getting Started}
-In this book the D standard library Phobos is used to create a replacement for
-the XML facilities given in std.xml;
-Performance is a crucial part when it comes to the development of an XML parser.
-Nobody wants to use a slow XML parser.
-To keep an eye on the performance of the parser we need test data to
-benchmark.
-Good test data is hard to come by, therefore we will at least partially,
-create our own.
-Listing \ref{lst:50000csv} shows a few lines of 50000 lines of \gls{csv} of
-personal data.
-%\lstinputlisting[label=lst:50000csv,caption={50000 Lines of \gls{csv}}]{5.csv}
-This listing allows us to get an idea of what data we can accept.
-We will use std.csv to parse that data and then use this data to generate
-\gls{xml} files of different sizes.
-\lstinputlisting[label=lst:csvexample1_1,caption={struct to store csv data in.},lastline=14]{csvexample1.d}
-The lines \ref{lst:csvexample1_beginmember} to \ref{lst:csvexample1_endmember}
-of Listing \ref{lst:csvexample1_1} show the names of the values present in the csv
-file.
 \gls{ctfe}
 
 %

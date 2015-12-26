@@ -1,0 +1,13 @@
+- void inputGroup(string modelName)
+	- import std.uni : toLower;
+	div.input-group
+		span.input-group-addon Set #{modelName}:
+		input.form-control(type="text", ng-model="#{modelName.toLower}")
+
+div.row
+	div.col-md-2
+	div.col-md-8
+		h1 Hello {{firstname}} {{lastname}}
+		- inputGroup("Firstname");
+		- inputGroup("Lastname");
+	div.col-md-2

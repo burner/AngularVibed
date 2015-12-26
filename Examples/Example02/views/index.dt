@@ -1,0 +1,18 @@
+doctype html
+html(ng-app)
+	head
+		meta(charset="utf-8")
+		meta(http-equiv="X-UA-Compatible", content="IE=edge")
+		meta(name="viewport", content="width=device-width, initial-scale=1")
+		script(src="./js/angular.js")
+		link(href="./css/bootstrap.min.css",rel="stylesheet")
+	body
+		h1 Hello {{firstname}} {{lastname}}
+		p
+			label Set Firstname
+				input(type="text", ng-model="firstname")
+			label Set Lastname
+				input(type="text", ng-model="lastname")
+
+		script(src="./js/jquery-2.1.4.min.js")
+		script(src="./js/bootstrap.min.js")

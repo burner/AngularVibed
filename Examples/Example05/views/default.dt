@@ -1,0 +1,5 @@
+div.row
+	div.col-md-2
+	div.col-md-8
+		h2 Nothing to see here
+	div.col-md-2

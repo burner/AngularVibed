@@ -1,0 +1,22 @@
+doctype html
+html(ng-app)
+	head
+		meta(charset="utf-8")
+		meta(http-equiv="X-UA-Compatible", content="IE=edge")
+		meta(name="viewport", content="width=device-width, initial-scale=1")
+		script(src="./js/angular.js")
+		link(href="./css/bootstrap.min.css",rel="stylesheet")
+	body
+		div.row
+			div.col-md-2
+			div.col-md-8
+				h1 Hello {{firstname}} {{lastname}}
+				div.input-group
+					span.input-group-addon Set Firstname:
+					input.form-control(type="text", ng-model="firstname")
+				div.input-group
+					span.input-group-addon Set Lastname:
+					input.form-control(type="text", ng-model="lastname")
+			div.col-md-2
+		script(src="./js/jquery-2.1.4.min.js")
+		script(src="./js/bootstrap.min.js")

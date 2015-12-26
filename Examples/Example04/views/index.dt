@@ -1,0 +1,18 @@
+- void css(string name)
+	link(href="#{name}",rel="stylesheet")
+
+- void javascript(string name)
+	script(src="#{name}")
+
+doctype html
+html(ng-app)
+	head
+		meta(charset="utf-8")
+		meta(http-equiv="X-UA-Compatible", content="IE=edge")
+		meta(name="viewport", content="width=device-width, initial-scale=1")
+		- javascript("./js/angular.js");
+		- css("./css/bootstrap.min.css");
+		- javascript("./js/jquery-2.1.4.min.js");
+		- javascript("./js/bootstrap.min.js");
+	body
+		include input
