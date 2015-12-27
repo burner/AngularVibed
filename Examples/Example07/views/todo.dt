@@ -1,0 +1,13 @@
+div.row
+	div.col-md-2
+	div.col-md-8
+		h2 Some Awesome Todo List
+	div.col-md-2
+div.row
+	div.col-md-2
+	div.col-md-8
+		ul.todo-list
+			li(ng-repeat="todo in todos")
+				input.toggle(type="checkbox",ng-model="todo.completed")
+				label {{todo.title}}
+	div.col-md-2
