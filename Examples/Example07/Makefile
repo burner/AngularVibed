@@ -5,3 +5,6 @@ tsToJs: $(TSSrc) $(JSSrc)
 
 %.js : %.ts
 	-tsc $< -module system
+
+clean:
+	rm $(JSSrc)
