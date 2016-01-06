@@ -1,0 +1,29 @@
+div.row
+	div.col-md-2
+	div.col-md-8
+		h2 Some Awesome Todo List
+	div.col-md-2
+div(ng-controller="TodoCtrl")
+	div.row
+		div.col-md-2
+		div.col-md-8
+			div.input-group
+				span.input-group-addon NewTodo
+				input.form-control#newTodo(type="text",ng-model="newTodo")
+				span.input-group-btn
+					button.btn.btn-default(type="button",ng-click="ctrl.addTodo()") Add
+		div.col-md-2
+	div.row
+	div.row
+		p
+		div.col-md-2
+		div.col-md-8
+			ul.list-group
+				li.list-group-item(ng-repeat="todo in todos")
+					label
+						| Completed
+						input.toggle(type="checkbox",ng-model="todo.completed")
+					button.btn.btn-default(type="button",ng-click="ctrl.removeItem(todo)") Remove
+					label {{todo.title}}
+					span.badge {{todo.creationDate}}
+		div.col-md-2
