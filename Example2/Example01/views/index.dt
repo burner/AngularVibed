@@ -1,0 +1,7 @@
+doctype html
+html
+	head
+		title Vibe.d site
+
+	body
+		h1 Hello World from vibe.d
