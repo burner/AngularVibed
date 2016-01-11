@@ -1,0 +1,5 @@
+div.row
+	div.col-md-2
+	div.col-md-8
+		h1 Angular 2 with bootstrap and vibe.d
+	div.col-md-2
