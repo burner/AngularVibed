@@ -1,0 +1,25 @@
+div.row
+	div.col-md-2
+	div.col-md-8
+		h1.
+			Hello {{firstname}} {{lastname}} from 
+			vibe.d, Angular2 and bootstrap
+	div.col-md-2
+
+div.row
+	div.col-md-2
+	div.col-md-8
+		div.input-group
+			span.input-group-addon Firstname:
+			| <input class="form-control" type="text" [(ngModel)]="firstname">
+
+	div.col-md-2
+
+div.row
+	div.col-md-2
+	div.col-md-8
+		div.input-group
+			span.input-group-addon Lastname:
+			| <input class="form-control" type="text" [(ngModel)]="lastname">
+
+	div.col-md-2
