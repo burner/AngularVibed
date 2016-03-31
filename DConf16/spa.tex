@@ -1,0 +1,49 @@
+\documentclass[notes,xelatex,13pt]{beamer}
+\usetheme{metropolis}
+\usefonttheme{professionalfonts} % using non standard fonts for beamer
+\usefonttheme{serif}
+\usepackage{helvet}
+\usepackage[english]{babel}
+\usepackage{graphicx}
+\usepackage{textpos}
+\usepackage{pgfpages}
+
+\setbeamertemplate{note page}{\pagecolor{yellow!5}\insertnote}\usepackage{palatino}
+\setbeameroption{show notes on second screen}
+
+\beamertemplatenavigationsymbolsempty
+
+\title{Asynchronous single page applications without a line of HTML or
+Javascript.}
+\subtitle{Or why D is just awesome}
+\author{Robert "burner" Schadek}
+\date{May 5, 2016}
+\institute{DConf}
+
+\begin{document}
+\maketitle
+
+\begin{frame}
+	\frametitle{Javascript and HTML are \textbf{awesome}}
+	\begin{itemize}
+		\item no types
+		\item variables may be undefined
+		\item repetition repetition repetition
+		\item no templates
+		\item no compile time function execution
+			\pause
+		\item no compile time
+	\end{itemize}
+	\note[item]{Very quickly go through the points and stop for dramatic pause}
+\end{frame}
+
+
+\begin{frame}[plain]
+\begin{textblock*}{0cm}(-1cm,-4.2cm)
+	\includegraphics[width=1.0\paperwidth]{picardriker.jpg}
+\end{textblock*}
+	\note[item]{I know what you are thinking.}
+	\note[item]{Walter, Andrei and the other screwed up letting me present
+	here.}
+\end{frame}
+\end{document}

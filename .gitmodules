@@ -1,3 +1,6 @@
 [submodule "Examples/DefinitelyTyped"]
 	path = Examples/DefinitelyTyped
 	url = git@github.com:DefinitelyTyped/DefinitelyTyped.git
+[submodule "DConf16/mtheme"]
+	path = DConf16/mtheme
+	url = git@github.com:matze/mtheme.git
