@@ -13,6 +13,10 @@
 
 \beamertemplatenavigationsymbolsempty
 
+\usepackage{xkeyval}
+\usepackage{todonotes}
+\presetkeys{todonotes}{inline}{}
+
 \title{Asynchronous single page applications without a line of HTML or
 Javascript.}
 \subtitle{Or why D is just awesome}
@@ -21,7 +25,6 @@ Javascript.}
 \institute{DConf}
 
 \begin{document}
-\section{Introduction}
 \maketitle
 
 \begin{frame}
@@ -60,14 +63,47 @@ Javascript.}
 	\end{itemize}
 \end{frame}
 
-\section{Vibe.d}
+\section{Vibe.d and Diet}
 \begin{frame}
-	\frametitle{Vibe.d excursus}
+	\frametitle{Vibe.d and Diet}
+	\todo{REST Interface generator}
+	\todo{Web Client generator}
+	\todo{Async sockets}
+	\todo{Async mysql}
+	\todo{Session (Redis)}
 \end{frame}
 
-\section{Typescript}
+\section{Typescript and AngularJS}
 \begin{frame}
-	\frametitle{Typescript excursus}
+	\frametitle{Typescript and AngularJS}
+\end{frame}
+
+\section{Dataflow from the Frontend to the Database and back again}
+\begin{frame}
+	\frametitle{Dataflow from the Frontend to the Database and back again}
+\end{frame}
+
+\section{Testing and Debugging}
+\begin{frame}
+	\frametitle{Testing and Debugging}
+	\note[item]{Of course we are perfect programmers and never make mistakes,
+	\textbf{BUT}.}
+\end{frame}
+
+\section{Miscellaneous}
+\begin{frame}
+	\frametitle{Miscellaneous}
+	\todo{GC Angst}
+	\todo{Deployment}
+	\todo{Performance Tuning}
+	\todo{HTTPS}
+\end{frame}
+
+\begin{frame}[plain]
+\begin{textblock*}{0cm}(-1cm,-4.2cm)
+	\includegraphics[width=1.0\paperwidth]{picardpuppy.png}
+	\todo{http://gryphon-shifter.deviantart.com/art/Captain-Picard-and-Puppies-458352865}
+\end{textblock*}
 \end{frame}
 
 \end{document}
