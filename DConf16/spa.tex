@@ -1,4 +1,4 @@
-\documentclass[notes,xelatex,13pt]{beamer}
+\documentclass[xelatex,13pt]{beamer}
 \usetheme{metropolis}
 \usefonttheme{professionalfonts} % using non standard fonts for beamer
 \usefonttheme{serif}
@@ -6,16 +6,66 @@
 \usepackage[english]{babel}
 \usepackage{graphicx}
 \usepackage{textpos}
+\usepackage{xcolor}
+\definecolor{mauve}{rgb}{0.86, 0.82, 1.0}
 \usepackage{pgfpages}
+\usepackage{listings}
 
-\setbeamertemplate{note page}{\pagecolor{yellow!5}\insertnote}\usepackage{palatino}
-\setbeameroption{show notes on second screen}
+\lstdefinelanguage{d}{
+	morekeywords={abstract,alias,align,asm,assert,auto,body,bool,break,byte,
+		case,cast,catch,cdouble,cent,cfloat,char,class,const,continue,creal,
+		dchar,debug,default,delegate,delete,deprecated,do,double,else,enum,
+		export,extern,false,final,finally,float,for,foreach,foreach_reverse,
+		function,goto,idouble,if,ifloat,immutable,import,in,inout,int,
+		interface,invariant,ireal,is,lazy,long,macro,mixin,module,new,nothrow,
+		null,out,override,package,pragma,private,protected,public,pure,real,
+		ref,return,scope,shared,short,static,struct,string,wstring,dstring,
+		super,switch,synchronized,template,this,throw,true,try,typedef,typeid,
+		typeof,ubyte,ucent,uint,ulong,union,unittest,ushort,version,void,
+		volatile,wchar,while,with,size_t,hash_t
+	},
+	sensitive=True,
+	morecomment=[l]{//},
+	morecomment=[s]{/\*}{\*/},
+	morestring=[b]"
+}
+
+\lstset{
+	language=d,
+	basicstyle=\footnotesize\ttfamily, % Standardschrift
+	numbers=left,               % Ort der Zeilennummern
+	numberstyle=\tiny,          % Stil der Zeilennummern
+	%stepnumber=2,               % Abstand zwischen den Zeilennummern
+	%captionpos=b,
+	numbersep=5pt,              % Abstand der Nummern zum Text
+	tabsize=4,                  % Groesse von Tabs
+	extendedchars=true,         %
+	breaklines=true,            % Zeilen werden Umgebrochen
+	showspaces=false,           % Leerzeichen anzeigen ?
+	showtabs=false,             % Tabs anzeigen ?
+	%frame=b,
+	rulecolor=\color[cmyk]{0.0, 0.0, 0.0, 0.316},
+	xleftmargin=17pt,
+	%xleftmargin=0pt,
+	framexleftmargin=17pt,
+	framexrightmargin=5pt,
+	framexbottommargin=4pt,
+	keywordstyle=\color{blue},          % keyword style
+	commentstyle=\color{dkgreen},       % comment style
+	stringstyle=\color{red},         % string literal style
+	showstringspaces=false,    % Leerzeichen in Strings anzeigen ?        
+	escapeinside={/+}{+/},
+	title=\lstname
+}
+
+%\setbeamertemplate{note page}{\pagecolor{yellow!5}\insertnote}\usepackage{palatino}
+%\setbeameroption{show notes on second screen}
 
 \beamertemplatenavigationsymbolsempty
 
 \usepackage{xkeyval}
-\usepackage{todonotes}
-\presetkeys{todonotes}{inline}{}
+%\presetkeys{todonotes}{inline}{}
+\usepackage[disable]{todonotes}
 
 \title{Asynchronous single page applications without a line of HTML or
 Javascript.}
@@ -179,16 +229,75 @@ Javascript.}
 		\item Awesome
 		\item Java Library with classes to build this model
 		\begin{itemize}
-			\item its code, its fits into gilt
+			\item its code, its fits into git
 		\end{itemize}
 		\item Structurizer even generates code  
-		\item[] only Java spring and .net
+		\item {\huge only Java spring and .net}
 	\end{itemize}
 \end{frame}
 \begin{frame}[plain]
 \begin{textblock*}{0cm}(-1cm,-4.2cm)
 	\includegraphics[width=1.0\paperwidth]{picardwtf.jpg}
 \end{textblock*}
+\end{frame}
+
+\section{How hard can it be}
+\begin{frame}
+	\frametitle{How do we approach the development}
+	\begin{itemize}
+		\item we're not gone create a new language \pause, at first 
+			\pause, most likely
+		\item the model (ast) is pretty simple
+		\begin{itemize}
+			\item the world has
+			\item actors, software/hardware systems
+			\item a software systems has
+			\item containers (everything with a unique pid)
+			\item a container has
+			\item components (think \lstinline@module@) and classes
+			\item a component has
+			\item components and classes
+			\item[]
+			\item connections between the above
+			\begin{itemize}
+				\item UML Association, Aggregation, Composition, Dependency
+			\end{itemize}
+			\item additional informations, names, descriptions
+		\end{itemize}
+	\end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]
+	\frametitle{How do we continue}
+	\begin{itemize}
+		\item we can add a single class to multiple containers and components
+		\item a class has member variable and member functions
+		\item Types \pause e.g. strings are not always string
+		\begin{itemize}
+			\item D string
+			\item MySQL text
+			\item C++ std::string
+		\end{itemize}
+	\end{itemize}
+\end{frame}
+\begin{frame}[fragile]
+	\frametitle{The Type Problem Solution}
+\begin{lstlisting}
+struct Type {
+    string name;
+    string[string] typeMapping;
+}
+
+Type str;
+str.name = "String";
+str.typeMappings["D"] = "string";
+str.typeMappings["MySQL"] = "std::string";
+\end{lstlisting}
+\pause
+\begin{itemize}
+	\item key \(=\) container name
+	\item value \(=\) name of type as used by the language of the container
+\end{itemize}
 \end{frame}
 
 \section{Miscellaneous}
