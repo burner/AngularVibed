@@ -127,10 +127,68 @@ Javascript.}
 		\onslide<5->{\item agile Methods} \onslide<6->{\(\leftarrow\) just
 			hacking with fancy names}
 		\onslide<3->{\item just Hacking} \onslide<4->{\(\leftarrow\) no plan
-			to speak of}
+			to speak of, just change}
 		
 	\end{itemize}
 	
+\end{frame}
+
+\begin{frame}
+	\frametitle{What do we want}
+	\begin{itemize}
+		\item speak about the system at different levels of detail\\
+		with different people
+		\item quickly introduce people to the system
+		\item keep data classes (Model) synchronized across
+		\begin{itemize}
+			\item Frontend
+			\item Server
+			\item Database
+		\end{itemize}
+		\item write only one model for everything, to keep stuff in sync
+		\item have description line based, because git
+		\item generate everything possible from the
+	\end{itemize}
+\end{frame}
+
+\section{Introducing C4 Architecture}
+\begin{frame}[plain]
+\begin{textblock*}{0cm}(-1cm,-4.7cm)
+	\includegraphics[width=1.0\paperwidth]{c4overview.png}
+\end{textblock*}
+\end{frame}
+\begin{frame}[plain]
+\begin{textblock*}{0cm}(-1cm,-4.7cm)
+	\includegraphics[width=1.0\paperwidth]{c4systemcontext.png}
+\end{textblock*}
+\end{frame}
+\begin{frame}[plain]
+\begin{textblock*}{0cm}(-1cm,-11.7cm)
+	\includegraphics[width=1.0\paperwidth]{c4container.png}
+\end{textblock*}
+\end{frame}
+\begin{frame}[plain]
+\begin{textblock*}{0cm}(-1cm,-4.7cm)
+	\includegraphics[width=1.0\paperwidth]{c4components.png}
+\end{textblock*}
+\end{frame}
+
+\begin{frame}
+	\frametitle{C4 Architecture \/ Structurizer}
+	\begin{itemize}
+		\item Awesome
+		\item Java Library with classes to build this model
+		\begin{itemize}
+			\item its code, its fits into gilt
+		\end{itemize}
+		\item Structurizer even generates code  
+		\item[] only Java spring and .net
+	\end{itemize}
+\end{frame}
+\begin{frame}[plain]
+\begin{textblock*}{0cm}(-1cm,-4.2cm)
+	\includegraphics[width=1.0\paperwidth]{picardwtf.jpg}
+\end{textblock*}
 \end{frame}
 
 \section{Miscellaneous}
