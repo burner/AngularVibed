@@ -80,7 +80,7 @@ Javascript.}
 \begin{frame}
 	\frametitle{Javascript and HTML are \textbf{awesome}}
 	\begin{itemize}
-		\item No types
+		\item No explicit types
 		\item Variables may be undefined
 		\item Repetition repetition repetition
 		\item No templates
@@ -109,18 +109,33 @@ Javascript.}
 		\item Keeping things DRY	
 			\pause
 		\item Get things done
-			\pause
 	\end{itemize}
 \end{frame}
 
 \section{Vibe.d and Diet}
 \begin{frame}
-	\frametitle{Vibe.d and Diet}
-	\todo{REST Interface generator}
-	\todo{Web Client generator}
-	\todo{Async sockets}
-	\todo{Async mysql}
-	\todo{Session (Redis)}
+	\frametitle{Vibe.d}
+	\begin{itemize}
+		\item Powerful asynchronous I/O and web toolkit for D
+			\pause
+		\item uses Fibers and Threads
+			\pause
+			\begin{itemize}
+				\item \(n \rightarrow m\) mapping
+					\pause
+				\item \lstinline@yield()@
+					\pause
+				\item async io
+			\end{itemize}
+			\pause
+		\item async DB connectivity for MongoDB, Redis, MySQL
+			\pause
+		\item Rest interface generator
+			\pause
+		\item Web interface generator
+			\pause
+		\item Diet
+	\end{itemize}
 \end{frame}
 
 \section{Typescript and AngularJS}
@@ -165,7 +180,7 @@ Javascript.}
 \begin{frame}
 	\frametitle{Everything is still wrong}
 	\begin{itemize}
-		\onslide<1->{\item Waterfall Model} \onslide<2->{\(\leftarrow\) no change ever}
+		\onslide<1->{\item Waterfall Model} \onslide<2->{\(\leftarrow\) no change, never}
 		\onslide<7->{\item UML} \onslide<8->{\(\leftarrow\) just kill me
 			already}
 
@@ -175,7 +190,7 @@ Javascript.}
 		}
 
 		\onslide<5->{\item agile Methods} \onslide<6->{\(\leftarrow\) just
-			hacking with fancy names}
+			hacking, with fancy names}
 		\onslide<3->{\item just Hacking} \onslide<4->{\(\leftarrow\) no plan
 			to speak of, just change}
 		
@@ -245,8 +260,8 @@ Javascript.}
 \begin{frame}
 	\frametitle{How do we approach the development}
 	\begin{itemize}
-		\item we're not gone create a new language \pause, at first 
-			\pause, most likely
+		\item we're not gone create a new language\pause, at first\pause,
+			most likely
 		\item the model (ast) is pretty simple
 		\begin{itemize}
 			\item the world has
@@ -288,10 +303,10 @@ struct Type {
     string[string] typeMapping;
 }
 
-Type str;
-str.name = "String";
+Type passwordHash;
+str.name = "PasswordString";
 str.typeMappings["D"] = "string";
-str.typeMappings["MySQL"] = "std::string";
+str.typeMappings["MySQL"] = "VARCHAR(128)";
 \end{lstlisting}
 \pause
 \begin{itemize}
