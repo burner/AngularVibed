@@ -36,7 +36,7 @@
 	numbers=left,               % Ort der Zeilennummern
 	numberstyle=\tiny,          % Stil der Zeilennummern
 	%stepnumber=2,               % Abstand zwischen den Zeilennummern
-	%captionpos=b,
+	captionpos=b,
 	numbersep=5pt,              % Abstand der Nummern zum Text
 	tabsize=4,                  % Groesse von Tabs
 	extendedchars=true,         %
@@ -55,7 +55,8 @@
 	stringstyle=\color{red},         % string literal style
 	showstringspaces=false,    % Leerzeichen in Strings anzeigen ?        
 	escapeinside={/+}{+/},
-	title=\lstname
+	title=\lstname,
+    postbreak=\raisebox{0ex}[0ex][0ex]{\ensuremath{\color{red}\hookrightarrow\space}}
 }
 
 %\setbeamertemplate{note page}{\pagecolor{yellow!5}\insertnote}\usepackage{palatino}
@@ -313,6 +314,53 @@ str.typeMappings["MySQL"] = "VARCHAR(128)";
 	\item key \(=\) container name
 	\item value \(=\) name of type as used by the language of the container
 \end{itemize}
+\end{frame}
+
+\begin{frame}
+	\frametitle{The World}
+	\begin{textblock*}{0cm}(-1.2cm,-2.0cm)
+		\includegraphics[width=1.0\paperwidth]{theworld.png}
+	\end{textblock*}
+\end{frame}
+
+\begin{frame}
+	\frametitle{The World and Containers}
+	\begin{textblock*}{0cm}(-1.2cm,-2.0cm)
+		\includegraphics[width=1.0\paperwidth]{theworldandcontainer.png}
+	\end{textblock*}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Actors, Containers and Components}
+	\begin{textblock*}{0cm}(-1.2cm,-2.0cm)
+		\includegraphics[width=1.0\paperwidth]{theworldcontainercomponents.png}
+	\end{textblock*}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Awesome Software System}
+	\begin{textblock*}{0cm}(-1.0cm,-4.0cm)
+		\includegraphics[width=1.0\paperwidth]{AwesomeSoftware.png}
+	\end{textblock*}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Generating the Database CREATE TABLE Statements}
+	\begin{columns}[T]
+		\begin{column}{0.49\linewidth}
+	\lstinputlisting[basicstyle=\scriptsize,language=SQL,caption={},numbers=none]
+		{Sources/Address.sql}
+	\lstinputlisting[basicstyle=\scriptsize,language=SQL,caption={},numbers=none]
+			{Sources/User.sql}
+	\lstinputlisting[basicstyle=\scriptsize,language=SQL,caption={},numbers=none]
+			{Sources/PostelCode.sql}
+		\end{column}
+		\begin{column}{0.49\linewidth}
+	\lstinputlisting[basicstyle=\scriptsize,language=SQL,caption={},numbers=none]
+			{Sources/Address_User.sql}
+		\end{column}
+		
+	\end{columns}
 \end{frame}
 
 \section{Miscellaneous}
