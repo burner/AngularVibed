@@ -283,11 +283,43 @@ Javascript.}
 	\end{itemize}
 \end{frame}
 
+\begin{frame}
+	\frametitle{Using Degenerator 1/2}
+	\lstinputlisting[basicstyle=\tiny,caption={},linerange=10-15,
+		firstnumber=10
+	]{Sources/app.d}
+	\pause
+	\lstinputlisting[basicstyle=\tiny,caption={},linerange=17-19,
+		firstnumber=17
+	]{Sources/app.d}
+	\pause
+	\lstinputlisting[basicstyle=\tiny,caption={},linerange=45-49,
+		firstnumber=45
+	]{Sources/app.d}
+	\pause
+	\lstinputlisting[basicstyle=\tiny,caption={},linerange=61-63,
+		firstnumber=61
+	]{Sources/app.d}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Using Degenerator 2/2}
+	\lstinputlisting[basicstyle=\tiny,caption={},linerange=61-63,
+		firstnumber=61
+	]{Sources/app.d}
+	\pause
+	\lstinputlisting[basicstyle=\tiny,caption={},linerange=68-71,
+		firstnumber=68
+	]{Sources/app.d}
+	\pause
+	\lstinputlisting[basicstyle=\tiny,caption={},linerange=90-92,
+		firstnumber=90
+	]{Sources/app.d}
+\end{frame}
+
 \begin{frame}[fragile]
-	\frametitle{How do we continue}
+	\frametitle{Types in Degenerator}
 	\begin{itemize}
-		\item we can add a single class to multiple containers and components
-		\item a class has member variable and member functions
 		\item Types \pause e.g. strings are not always string
 		\begin{itemize}
 			\item D string
@@ -295,10 +327,7 @@ Javascript.}
 			\item C++ std::string
 		\end{itemize}
 	\end{itemize}
-\end{frame}
-\begin{frame}[fragile]
-	\frametitle{The Type Problem Solution}
-\begin{lstlisting}
+	\begin{lstlisting}[basicstyle=\scriptsize]
 struct Type {
     string name;
     string[string] typeMapping;
@@ -309,11 +338,20 @@ str.name = "PasswordString";
 str.typeMappings["D"] = "string";
 str.typeMappings["MySQL"] = "VARCHAR(128)";
 \end{lstlisting}
+	\vspace{-1cm}
 \pause
 \begin{itemize}
 	\item key \(=\) container name
 	\item value \(=\) name of type as used by the language of the container
 \end{itemize}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Generating}
+	\lstinputlisting[basicstyle=\scriptsize,caption={},linerange=106-110,
+		firstnumber=106
+	]{Sources/app.d}
+	
 \end{frame}
 
 \begin{frame}
@@ -363,20 +401,16 @@ str.typeMappings["MySQL"] = "VARCHAR(128)";
 	\end{columns}
 \end{frame}
 
-\section{Miscellaneous}
-\begin{frame}
-	\frametitle{Miscellaneous}
-	\todo{GC Angst}
-	\todo{Deployment}
-	\todo{Performance Tuning}
-	\todo{HTTPS}
-\end{frame}
-
 \begin{frame}[plain]
 \begin{textblock*}{0cm}(-1cm,-4.2cm)
 	\includegraphics[width=1.0\paperwidth]{picardpuppy.png}
 	\todo{http://gryphon-shifter.deviantart.com/art/Captain-Picard-and-Puppies-458352865}
 \end{textblock*}
+\end{frame}
+
+\begin{frame}
+	\frametitle{The End}
+	
 \end{frame}
 
 \end{document}
