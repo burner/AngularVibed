@@ -1,0 +1,3 @@
+div#container
+	p {{wetter.text}}
+	p {{wetter.temperature }}

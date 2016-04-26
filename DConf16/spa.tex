@@ -8,6 +8,7 @@
 \usepackage{textpos}
 \usepackage{xcolor}
 \definecolor{mauve}{rgb}{0.86, 0.82, 1.0}
+\definecolor{dkgreen}{rgb}{0,0.6,0}
 \usepackage{pgfpages}
 \usepackage{listings}
 
@@ -131,6 +132,8 @@ Javascript.}
 			\pause
 		\item async DB connectivity for MongoDB, Redis, MySQL
 			\pause
+		\item You don't need to care about it%
+			\pause , usually 
 		\item Rest interface generator
 			\pause
 		\item Web interface generator
@@ -138,6 +141,30 @@ Javascript.}
 		\item Diet
 	\end{itemize}
 \end{frame}
+
+\subsection{Vibe.d}
+\begin{frame}
+	\frametitle{Rest Interface Generator}
+	\lstinputlisting[basicstyle=\tiny,caption={},linerange=7-10,
+		firstnumber=7
+	]{Sources/VibeAngularExample/rest.d}
+	\pause
+	\lstinputlisting[basicstyle=\tiny,caption={},linerange=12-21,
+		firstnumber=12
+	]{Sources/VibeAngularExample/rest.d}
+\end{frame}
+\begin{frame}
+	\frametitle{Rest Interface Generator}
+	\lstinputlisting[basicstyle=\tiny,caption={},linerange=23-32,
+		firstnumber=23
+	]{Sources/VibeAngularExample/rest.d}
+	\pause
+	\lstinputlisting[basicstyle=\tiny,caption={},linerange=34-43,
+		firstnumber=34
+	]{Sources/VibeAngularExample/rest.d}
+\end{frame}
+
+\subsection{Diet}
 
 \section{Typescript and AngularJS}
 \begin{frame}
