@@ -321,20 +321,21 @@ Javascript.}
 	\frametitle{Types in Degenerator}
 	\begin{itemize}
 		\item Types \pause e.g. strings are not always string
+		\pause
 		\begin{itemize}
 			\item D string
 			\item MySQL text
 			\item C++ std::string
 		\end{itemize}
 	\end{itemize}
+	\pause
 	\begin{lstlisting}[basicstyle=\scriptsize]
 struct Type {
     string name;
     string[string] typeMapping;
 }
 
-Type passwordHash;
-str.name = "PasswordString";
+auto passwordHash = Type("PasswordString"); /+\pause+/
 str.typeMappings["D"] = "string";
 str.typeMappings["MySQL"] = "VARCHAR(128)";
 \end{lstlisting}
