@@ -1,3 +1,5 @@
 div#container
 	p {{wetter.text}}
 	p {{wetter.temperature }}
+
+	button(type="submit",ng-click="ctrl.weather();") Get Weather

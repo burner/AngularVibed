@@ -1,5 +1,6 @@
 import vibe.d;
 import weather;
+import std.random;
 
 interface MyAPI {
 	// GET /weather -> responds {"text": "...", "temperature": ...}
@@ -7,7 +8,13 @@ interface MyAPI {
 }
 
 class MyAPIImplementation : MyAPI {
-	Weather getWeather() { return Weather("sunny", 25); }
+	auto weather = [ "sunny", "rain", "cats and dogs", "snow" ];
+	Weather getWeather() { 
+		return Weather(
+			weather[uniform(0, weather.length)], 
+			uniform(-10,30)
+		); 
+	}
 }
 
 shared static this() {
@@ -23,10 +30,6 @@ shared static this() {
 	router.get("/", staticTemplate!"index.dt");
 	router.get("/main.html", staticTemplate!"main.dt");
 
-	//
-	// data_and_volume?sym=%d&start=%d&end=%s
-	//
-	//router.get("/myapi.js", serveRestJSClient!MyAPI(restsettings));
 	router.registerRestInterface(new MyAPIImplementation, restsettings);
 
 	router.get("*", serveStaticFiles("./public/"));

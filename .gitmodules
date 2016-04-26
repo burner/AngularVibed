@@ -4,3 +4,6 @@
 [submodule "DConf16/mtheme"]
 	path = DConf16/mtheme
 	url = git@github.com:matze/mtheme.git
+[submodule "DConf16/Sources/VibeAngularExample/DefinitelyTyped"]
+	path = DConf16/Sources/VibeAngularExample/DefinitelyTyped
+	url = git@github.com:DefinitelyTyped/DefinitelyTyped.git

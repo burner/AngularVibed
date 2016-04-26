@@ -13,7 +13,8 @@ mainApp
 		$routeProvider.
 		when("/", {
 			templateUrl: "main.html",
-			controller: MainCtrl
+			controller: MainCtrl,
+			controllerAs: "ctrl"
 		});
 	});
 
@@ -30,6 +31,10 @@ class MainCtrl {
 	constructor(private $scope: MainScope,
 			private $http : ng.IHttpService) 
 	{
+		this.weather();
+	}
+
+	weather() : void {
 		var s = '/weather';
 		this.$http.get(s).success((data : Weather) => {
 			this.$scope.wetter = data;
