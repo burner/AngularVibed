@@ -1,4 +1,4 @@
-div#container
+.container
 	p {{wetter.text}}
 	p {{wetter.temperature }}
 

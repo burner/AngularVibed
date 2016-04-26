@@ -145,42 +145,75 @@ Javascript.}
 \subsection{Vibe.d}
 \begin{frame}
 	\frametitle{Rest Interface Generator}
-	\lstinputlisting[basicstyle=\tiny,caption={},linerange=7-10,
-		firstnumber=7
-	]{Sources/VibeAngularExample/rest.d}
+	\lstinputlisting[basicstyle=\tiny,caption={},linerange=5-19,
+		firstnumber=5
+	]{Sources/VibeAngularExample/source/app.d}
 	\pause
-	\lstinputlisting[basicstyle=\tiny,caption={},linerange=12-21,
-		firstnumber=12
-	]{Sources/VibeAngularExample/rest.d}
+	\lstinputlisting[basicstyle=\tiny,caption={},linerange=30-34,
+		firstnumber=30
+	]{Sources/VibeAngularExample/source/app.d}
+	\pause
+	\lstinputlisting[basicstyle=\tiny,caption={},linerange=1-4,
+		firstnumber=1
+	]{Sources/VibeAngularExample/source/weather.d}
 \end{frame}
+
+\subsection{Angular Typescript}
 \begin{frame}
-	\frametitle{Rest Interface Generator}
-	\lstinputlisting[basicstyle=\tiny,caption={},linerange=23-32,
-		firstnumber=23
-	]{Sources/VibeAngularExample/rest.d}
-	\pause
-	\lstinputlisting[basicstyle=\tiny,caption={},linerange=34-43,
-		firstnumber=34
-	]{Sources/VibeAngularExample/rest.d}
+	\frametitle{AngularJs Typescript}
+	\lstinputlisting[language=java,basicstyle=\tiny,caption={},
+		linerange=16-40,
+		firstnumber=16
+	]{Sources/VibeAngularExample/public/myapp.ts}
 \end{frame}
 
 \subsection{Diet}
-
-\section{Typescript and AngularJS}
 \begin{frame}
-	\frametitle{Typescript and AngularJS}
+	\frametitle{Diet}
+	\lstinputlisting[language=java,basicstyle=\scriptsize,caption={},
+		linerange=4-13,
+		firstnumber=4
+	]{Sources/VibeAngularExample/views/index.dt}
+	\pause
+	\lstinputlisting[language=java,basicstyle=\scriptsize,caption={},
+		linerange=1-3,
+		firstnumber=1
+	]{Sources/VibeAngularExample/views/index.dt}
+	\pause
+	\lstinputlisting[language=java,basicstyle=\scriptsize,caption={},
+		linerange=1-20,
+		firstnumber=1
+	]{Sources/VibeAngularExample/views/main.dt}
 \end{frame}
 
-\section{Dataflow from the Frontend to the Database and back again}
+\section{Live Demo}
+
+\section{Dataflow from the Server to the Frontend and back again}
 \begin{frame}
-	\frametitle{Dataflow from the Frontend to the Database and back again}
+	\frametitle{Dataflow from the Server to the Frontend and back again}
+	\lstinputlisting[basicstyle=\small,caption={Dlang},linerange=1-4,
+		firstnumber=1
+	]{Sources/VibeAngularExample/source/weather.d}
+	\pause
+	\lstinputlisting[language=java,basicstyle=\small,caption={Typescript},
+		linerange=16-19,
+		firstnumber=16
+	]{Sources/VibeAngularExample/public/myapp2.ts}
 \end{frame}
 
-\section{Testing and Debugging}
-\begin{frame}
-	\frametitle{Testing and Debugging}
-	\note[item]{Of course we are perfect programmers and never make mistakes,
-	\textbf{BUT}.}
+\begin{frame}[fragile]
+	\frametitle{dstructtotypescript}
+\begin{lstlisting}[numbers=none,language=bash]
+dstructtotypescript -i weather.d -p weather.ts -s Weather
+\end{lstlisting}
+\pause
+dstructtotypescript control flow:
+\begin{enumerate}
+	\item write D source file containing magic and content of weather.d	
+	\item rdmd source file
+	\item use typescript file containing \lstinline@struct Weather@ converted
+		to Typescript
+\end{enumerate}
 \end{frame}
 
 \section{Everything is wrong}

@@ -15,7 +15,7 @@ mainApp
 
 interface Weather {
 	text : string,
-	temperature : number
+	tempereture : number
 }
 
 interface MainScope extends ng.IScope {
