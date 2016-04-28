@@ -8,7 +8,7 @@ interface MyAPI {
 }
 
 class MyAPIImplementation : MyAPI {
-	auto weather = [ "sunny", "rain", "cats and dogs", "snow" ];
+	auto weather = [ "sunny", "rainy", "cats and dogs", "snow" ];
 
 	Weather getWeather() { 
 		return Weather(

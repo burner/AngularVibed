@@ -58,8 +58,8 @@ void main() {
 	integer.typeToLanguage["Angular"] = "number";
 	integer.typeToLanguage["MySQL"] = "LONG";
 
-	Class user = getOrNewClass("User", frontendUserCtrl, 
-		serverUserCtrl, database
+	Class user = getOrNewClass("User", 
+		frontendUserCtrl, serverUserCtrl, database
 	);
 
 	user.containerType["D"] = "struct";

@@ -110,6 +110,8 @@ Javascript.}
 			\pause
 		\item Keeping things DRY	
 			\pause
+		\item Performance
+			\pause
 		\item Get things done
 	\end{itemize}
 \end{frame}
@@ -128,10 +130,9 @@ Javascript.}
 			\end{itemize}
 			\pause
 		\item async DB connectivity for MongoDB, Redis, MySQL
-		\item You don't need to care about it
+		\item You don't need to care about async
 		\item Rest interface generator
 		\item Web interface generator
-		\item Diet
 	\end{itemize}
 \end{frame}
 
@@ -293,14 +294,17 @@ dstructtotypescript control flow:
 \end{frame}
 
 \begin{frame}
-	\frametitle{C4 Architecture Structurizer}
+	\frametitle{Structurizr}
 	\begin{itemize}
 		\item Implements C4 Architecture Model 
-		\item Java Library with classes to build this model
+		\item Java library to build the model
+			\pause
 		\begin{itemize}
 			\item its code, its fits into git
 		\end{itemize}
-		\item Structurizer generates code
+			\pause
+		\item Structurizr generates code
+			\pause
 		\item {\huge only Java spring and .net}
 	\end{itemize}
 \end{frame}
@@ -316,9 +320,11 @@ dstructtotypescript control flow:
 	\begin{itemize}
 		\item we're not gone create a new language\pause, at first\pause,
 			most likely
+			\pause
 		\item the model (ast) is pretty simple
 			\pause
 		\begin{itemize}
+			\item the world
 			\item the world has
 			\item actors, software/hardware systems
 			\item a software systems has
@@ -327,10 +333,11 @@ dstructtotypescript control flow:
 			\item components (think \lstinline@module@) and classes
 			\item a component has
 			\item components and classes
+			\item classes have members
 			\item[]
 			\item connections between the above
 			\begin{itemize}
-				\item UML Association, Aggregation, Composition, Dependency
+				\item UML Association, Aggregation, Composition, Dependency, \(\dots\)
 			\end{itemize}
 			\item additional informations, names, descriptions
 		\end{itemize}
@@ -366,6 +373,10 @@ dstructtotypescript control flow:
 		firstnumber=68
 	]{Sources/app.d}
 	\pause
+	\lstinputlisting[basicstyle=\tiny,caption={},linerange=77-79,
+		firstnumber=77
+	]{Sources/app.d}
+	\pause
 	\lstinputlisting[basicstyle=\tiny,caption={},linerange=90-92,
 		firstnumber=90
 	]{Sources/app.d}
@@ -374,7 +385,7 @@ dstructtotypescript control flow:
 \begin{frame}[fragile]
 	\frametitle{Types in Degenerator}
 	\begin{itemize}
-		\item Types \pause e.g. strings are not always string
+		\item Types \pause e.g. strings are not always strings
 		\pause
 		\begin{itemize}
 			\item D string
@@ -462,7 +473,7 @@ str.typeMappings["MySQL"] = "VARCHAR(128)";
 		\item Diagrams describing the project at different levels of detail
 		\item Database schema
 		\item phpmyadmin clones
-		\item Database abstractions
+		\item Database access code
 		\item Data objects (D struct/class, Typescript interface/class, \(\dots\)
 		\item Server skeletons
 			\pause
