@@ -31,7 +31,7 @@ shared static this() {
 	router.get("/", staticTemplate!"index.dt");
 	router.get("/main.html", staticTemplate!"main.dt");
 
-	router.registerRestInterface(new MyAPIImplementation, restsettings);
+	router.registerRestInterface!MyAPI(new MyAPIImplementation, restsettings);
 
 	router.get("*", serveStaticFiles("./public/"));
 	listenHTTP(settings, router);
