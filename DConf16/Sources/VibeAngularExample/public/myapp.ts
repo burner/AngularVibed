@@ -19,7 +19,7 @@ interface Weather {
 }
 
 interface MainScope extends ng.IScope {
-	wetter: Weather
+	weather: Weather
 }
 
 class MainCtrl {
@@ -34,7 +34,7 @@ class MainCtrl {
 	weather() : void {
 		var s = '/weather';
 		this.$http.get(s).success((data : Weather) => {
-			this.$scope.wetter = data;
+			this.$scope.weather = data;
 		});
 	}
 }
