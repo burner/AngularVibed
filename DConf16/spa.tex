@@ -121,7 +121,7 @@ Javascript.}
 	\frametitle{Vibe.d}
 	\begin{itemize}
 		\item Powerful asynchronous I/O and web toolkit for D
-		\item uses Fibers and Threads
+		\item Uses Fibers and Threads
 			\pause
 			\begin{itemize}
 				\item \(n \rightarrow m\) mapping
@@ -185,11 +185,11 @@ Javascript.}
 \section{Dataflow from the Server to the Frontend and back again}
 \begin{frame}
 	\frametitle{Dataflow from the Server to the Frontend and back again}
-	\lstinputlisting[basicstyle=\small,caption={Dlang},linerange=1-4,
+	\lstinputlisting[basicstyle=\small,title={Dlang},linerange=1-4,
 		firstnumber=1
 	]{Sources/VibeAngularExample/source/weather.d}
 	\pause
-	\lstinputlisting[language=java,basicstyle=\small,caption={Typescript},
+	\lstinputlisting[language=java,basicstyle=\small,title={Typescript},
 		linerange=16-19,
 		firstnumber=16
 	]{Sources/VibeAngularExample/public/myapp2.ts}
@@ -203,9 +203,9 @@ dstructtotypescript -i weather.d -p weather.ts -s Weather
 \pause
 dstructtotypescript control flow:
 \begin{enumerate}
-	\item write D source file containing magic and content of weather.d	
+	\item Write D source file containing magic and content of weather.d	
 	\item rdmd source file
-	\item use typescript file containing \lstinline@struct Weather@ converted
+	\item Use typescript file containing \lstinline@struct Weather@ converted
 		to Typescript
 \end{enumerate}
 \end{frame}
@@ -220,12 +220,12 @@ dstructtotypescript control flow:
 \begin{frame}
 	\frametitle{Everything is wrong}
 	\begin{itemize}
-		\item all we solved was a tiny specific problem
-		\item what about server to database
-		\item what if we would use Dart instead of Typescript
-		\item how do we communicate the overall architecture
-		\item how do we keep the architecture in sync with the code
-		\item how do we communicate with non-developer
+		\item All we solved was a tiny specific problem
+		\item What about server to database
+		\item What if we would use Dart instead of Typescript
+		\item How do we communicate the overall architecture
+		\item How do we keep the architecture in sync with the code
+		\item How do we communicate with non-developer
 		\item ...
 		\pause
 		\item {\huge How do we deal with change?}
@@ -236,7 +236,7 @@ dstructtotypescript control flow:
 	\frametitle{Everything is still wrong}
 	\begin{itemize}
 		\onslide<1->{\item Waterfall Model} \onslide<2->{\(\leftarrow\) no change, never}
-		\onslide<7->{\item UML} \onslide<8->{\(\leftarrow\) just kill me
+		\onslide<7->{\item UML} \onslide<8->{\(\leftarrow\) Just kill me
 			already}
 
 		\item[] { \onslide<1-8>{\includegraphics[width=0.3\textwidth]{Stick1.png}}
@@ -244,7 +244,7 @@ dstructtotypescript control flow:
 				\only<10>{\includegraphics[width=0.3\textwidth]{Stick2.png}}
 		}
 
-		\onslide<5->{\item agile Methods} \onslide<6->{\(\leftarrow\) just
+		\onslide<5->{\item Agile Methods} \onslide<6->{\(\leftarrow\) just
 			hacking, with fancy names}
 		\onslide<3->{\item Hacking} \onslide<4->{\(\leftarrow\) no plan
 			to speak of, just change}
@@ -256,18 +256,18 @@ dstructtotypescript control flow:
 \begin{frame}
 	\frametitle{What do we want}
 	\begin{itemize}
-		\item speak about the system at different levels of detail\\
+		\item Speak about the system at different levels of detail\\
 		with different people
-		\item quickly introduce people to the system
-		\item keep data classes (Model) synchronized across
+		\item Quickly introduce people to the system
+		\item Keep data classes (Model) synchronized across
 		\begin{itemize}
 			\item Frontend
 			\item Server
 			\item Database
 		\end{itemize}
-		\item write only one model for everything, to keep stuff in sync
-		\item have description line based, because git
-		\item generate everything possible from the model
+		\item Write only one model for everything, to keep stuff in sync
+		\item Have description line based, because git
+		\item Generate everything possible from the model
 	\end{itemize}
 \end{frame}
 
@@ -300,12 +300,12 @@ dstructtotypescript control flow:
 		\item Java library to build the model
 			\pause
 		\begin{itemize}
-			\item its code, its fits into git
+			\item Its code, its fits into git
 		\end{itemize}
 			\pause
 		\item Structurizr generates code
 			\pause
-		\item {\huge only Java and .net}
+		\item {\huge Only Java and .net}
 	\end{itemize}
 \end{frame}
 \begin{frame}[plain]
@@ -318,28 +318,28 @@ dstructtotypescript control flow:
 \begin{frame}
 	\frametitle{How do we approach the development}
 	\begin{itemize}
-		\item we're not gone create a new language\pause, at first\pause,
+		\item We're not gonne create a new language\pause, at first\pause,
 			most likely
 			\pause
-		\item the model (ast) is pretty simple
+		\item The model (ast) is pretty simple
 			\pause
 		\begin{itemize}
-			\item the world
-			\item the world has
-			\item actors, software/hardware systems
-			\item a software systems has
-			\item containers (everything with a unique pid)
-			\item a container has
-			\item components (think \lstinline@module@) and classes
-			\item a component has
-			\item components and classes
-			\item classes have members
+			\item The world
+			\item The world has
+			\item Actors, software/hardware systems
+			\item A software systems has
+			\item Containers (everything with a unique pid)
+			\item A container has
+			\item Components (think \lstinline@module@) and classes
+			\item A component has
+			\item Components and classes
+			\item Classes have members
 			\item[]
-			\item connections between the above
+			\item Connections between the above
 			\begin{itemize}
 				\item UML Association, Aggregation, Composition, Dependency, \(\dots\)
 			\end{itemize}
-			\item additional informations, names, descriptions
+			\item Additional informations, names, descriptions
 		\end{itemize}
 	\end{itemize}
 \end{frame}
@@ -400,16 +400,11 @@ struct Type {
     string[string] typeMapping;
 }
 
-auto passwordHash = Type("PasswordString"); /+\pause+/
-str.typeMappings["D"] = "string";
-str.typeMappings["MySQL"] = "VARCHAR(128)";
+auto pwdHash = Type("PasswordString"); /+\pause+/
+pwdHash.typeMappings["D"] = "string";
+pwdHash.typeMappings["MySQL"] = "VARCHAR(128)";
 \end{lstlisting}
 	\vspace{-1cm}
-\pause
-\begin{itemize}
-	\item key \(=\) container name
-	\item value \(=\) name of type as used by the language of the container
-\end{itemize}
 \end{frame}
 
 \begin{frame}
@@ -417,7 +412,6 @@ str.typeMappings["MySQL"] = "VARCHAR(128)";
 	\lstinputlisting[basicstyle=\scriptsize,caption={},linerange=106-110,
 		firstnumber=106
 	]{Sources/app.d}
-	
 \end{frame}
 
 \begin{frame}
@@ -434,12 +428,12 @@ str.typeMappings["MySQL"] = "VARCHAR(128)";
 	\end{textblock*}
 \end{frame}
 
-\begin{frame}
-	\frametitle{Actors, Containers and Components}
-	\begin{textblock*}{0cm}(-1.2cm,-2.0cm)
-		\includegraphics[width=1.0\paperwidth]{theworldcontainercomponents.png}
-	\end{textblock*}
-\end{frame}
+%\begin{frame}
+%	\frametitle{Actors, Containers and Components}
+%	\begin{textblock*}{0cm}(-1.2cm,-2.0cm)
+%		\includegraphics[width=1.0\paperwidth]{theworldcontainercomponents.png}
+%	\end{textblock*}
+%\end{frame}
 
 \begin{frame}
 	\frametitle{Awesome Software System}
@@ -478,10 +472,8 @@ str.typeMappings["MySQL"] = "VARCHAR(128)";
 		\item Server skeletons
 		\item Frontend skeletons
 			\pause
-		\item you name it\pause, you write the generator
-			\pause
-		\item all that out of one model that fits into a version control
-			system
+		\item Graphviz mostly done, MySQL is getting there, Vibe.d and
+			Angular2 next
 	\end{itemize}
 \end{frame}
 
