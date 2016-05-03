@@ -218,6 +218,8 @@ dstructtotypescript -i weather.d -p weather.ts -s Weather
 		\pause
 		\node at (0.8,1) (F) {
 \begin{lstlisting}[language=d,numbers=none,basicstyle=\tiny,caption={}]
+import std.format;
+
 foreach(it; __traits(allMembers, Weather))
 \end{lstlisting}
 		};
@@ -261,7 +263,7 @@ foreach(it; __traits(allMembers, Weather))
 	\frametitle{Everything is still wrong}
 	\begin{itemize}
 		\onslide<1->{\item Waterfall Model} \onslide<2->{\(\leftarrow\) no change, never}
-		\onslide<7->{\item UML} \onslide<8->{\(\leftarrow\) Just kill me
+		\onslide<7->{\item UML} \onslide<8->{\(\leftarrow\) just kill me
 			already}
 
 		\item[] { \onslide<1-8>{\includegraphics[width=0.3\textwidth]{Stick1.png}}
@@ -430,6 +432,9 @@ pwdHash.typeMappings["D"] = "string";
 pwdHash.typeMappings["MySQL"] = "VARCHAR(128)";
 \end{lstlisting}
 	\vspace{-1cm}
+\begin{itemize}
+	\item Similar types with different behaviour across containers
+\end{itemize}
 \end{frame}
 
 \begin{frame}
