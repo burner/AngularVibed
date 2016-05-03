@@ -30,6 +30,25 @@
 	morecomment=[s]{/\*}{\*/},
 	morestring=[b]"
 }
+\lstdefinelanguage{typescript}{
+	morekeywords={abstract,alias,align,asm,assert,auto,body,bool,break,byte,
+		case,cast,catch,cdouble,cent,cfloat,char,class,const,continue,creal,
+		dchar,debug,default,delegate,delete,deprecated,do,double,else,enum,
+		export,extern,false,final,finally,float,for,foreach,foreach_reverse,
+		function,goto,idouble,if,ifloat,immutable,import,in,inout,int,
+		interface,invariant,ireal,is,lazy,long,macro,mixin,module,new,nothrow,
+		null,out,override,package,pragma,private,protected,public,pure,real,
+		ref,return,scope,shared,short,static,struct,string,wstring,dstring,
+		super,switch,synchronized,template,this,throw,true,try,typedef,typeid,
+		typeof,ubyte,ucent,uint,ulong,union,unittest,ushort,version,void,
+		volatile,wchar,while,with,size_t,hash_t,number
+	},
+	sensitive=True,
+	morecomment=[l]{//},
+	morecomment=[s]{/\*}{\*/},
+	morestring=[b]"
+}
+
 
 \lstset{
 	language=d,
@@ -69,7 +88,7 @@
 %\presetkeys{todonotes}{inline}{}
 \usepackage[disable]{todonotes}
 
-\title{Asynchronous single page applications without a line of HTML or
+\title{Asynchronous Single Page Applications without a Line of HTML or
 Javascript.}
 \subtitle{Or why D is just awesome}
 \author{Robert "burner" Schadek}
@@ -155,9 +174,8 @@ Javascript.}
 \subsection{Angular Typescript}
 \begin{frame}
 	\frametitle{AngularJs Typescript}
-	\lstinputlisting[language=java,basicstyle=\tiny,caption={},
-		linerange=16-40,
-		firstnumber=16
+	\lstinputlisting[language=typescript,basicstyle=\tiny,caption={},
+		linerange=16-40, firstnumber=16
 	]{Sources/VibeAngularExample/public/myapp.ts}
 \end{frame}
 
@@ -189,9 +207,8 @@ Javascript.}
 		firstnumber=1
 	]{Sources/VibeAngularExample/source/weather.d}
 	\pause
-	\lstinputlisting[language=java,basicstyle=\small,title={Typescript},
-		linerange=16-19,
-		firstnumber=16
+	\lstinputlisting[language=typescript,basicstyle=\small,
+		title={Typescript}, linerange=16-19, firstnumber=16
 	]{Sources/VibeAngularExample/public/myapp2.ts}
 \end{frame}
 
@@ -225,7 +242,7 @@ foreach(it; __traits(allMembers, Weather))
 		};
 		\pause
 		\node at(6,2.0) (T) {
-			\lstinputlisting[numbers=none,language=java,basicstyle=\tiny,
+			\lstinputlisting[numbers=none,language=typescript,basicstyle=\tiny,
 				caption={}, linerange=16-19, firstnumber=16
 			]{Sources/VibeAngularExample/public/myapp.ts}
 		};
