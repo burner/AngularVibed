@@ -23,7 +23,7 @@
 		ref,return,scope,shared,short,static,struct,string,wstring,dstring,
 		super,switch,synchronized,template,this,throw,true,try,typedef,typeid,
 		typeof,ubyte,ucent,uint,ulong,union,unittest,ushort,version,void,
-		volatile,wchar,while,with,size_t,hash_t
+		volatile,wchar,while,with,size_t,hash_t,__traits
 	},
 	sensitive=True,
 	morecomment=[l]{//},
@@ -201,13 +201,38 @@ Javascript.}
 dstructtotypescript -i weather.d -p weather.ts -s Weather
 \end{lstlisting}
 \pause
-dstructtotypescript control flow:
-\begin{enumerate}
-	\item Write D source file containing magic and content of weather.d	
-	\item rdmd source file
-	\item Use typescript file containing \lstinline@struct Weather@ converted
-		to Typescript
-\end{enumerate}
+%dstructtotypescript control flow:
+%\begin{enumerate}
+%	\item Write D source file containing magic and content of weather.d	
+%	\item rdmd source file
+%	\item Use typescript file containing \lstinline@struct Weather@ converted
+%		to Typescript
+%\end{enumerate}
+\begin{figure}[h]
+	\begin{tikzpicture}
+		\node at (0,3) (D) {
+			\lstinputlisting[numbers=none,basicstyle=\tiny,caption={},
+				linerange=1-4, firstnumber=1
+			]{Sources/VibeAngularExample/source/weather.d}
+		};
+		\pause
+		\node at (0.8,1) (F) {
+\begin{lstlisting}[language=d,numbers=none,basicstyle=\tiny,caption={}]
+foreach(it; __traits(allMembers, Weather))
+\end{lstlisting}
+		};
+		\pause
+		\node at(6,2.0) (T) {
+			\lstinputlisting[numbers=none,language=java,basicstyle=\tiny,
+				caption={}, linerange=16-19, firstnumber=16
+			]{Sources/VibeAngularExample/public/myapp.ts}
+		};
+
+	\draw[->,line width=0.2mm,black] (D) -- (T);
+	\draw[->,line width=0.2mm,black] (F) -- (T);
+	\end{tikzpicture}
+	
+\end{figure}
 \end{frame}
 
 \section{Everything is wrong}
