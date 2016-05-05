@@ -1,6 +1,6 @@
-\documentclass[xelatex,13pt]{beamer}
+\documentclass[xelatex,14pt]{beamer}
 \usetheme{metropolis}
-\usefonttheme{professionalfonts} % using non standard fonts for beamer
+%\usefonttheme{professionalfonts} % using non standard fonts for beamer
 \usefonttheme{serif}
 \usepackage{helvet}
 \usepackage[english]{babel}
@@ -158,22 +158,22 @@ Javascript.}
 \subsection{Vibe.d}
 \begin{frame}
 	\frametitle{REST Interface Generator}
-	\lstinputlisting[basicstyle=\small,caption={},linerange=5-9,
+	\lstinputlisting[basicstyle=\footnotesize,caption={},linerange=5-9,
 		firstnumber=5,numbers=none,xleftmargin=-0.7cm
 	]{Sources/VibeAngularExample/source/app.d}
 	\pause
-	\lstinputlisting[basicstyle=\small,caption={},linerange=10-19,
+	\lstinputlisting[basicstyle=\footnotesize,caption={},linerange=10-19,
 		firstnumber=5,numbers=none,xleftmargin=-0.7cm
 	]{Sources/VibeAngularExample/source/app.d}
 \end{frame}
 \begin{frame}
 	\frametitle{REST Interface Generator}
-	\lstinputlisting[basicstyle=\small,caption={},linerange=30-34,
+	\lstinputlisting[basicstyle=\footnotesize,caption={},linerange=30-34,
 		firstnumber=30,numbers=none,xleftmargin=-1.5cm
 	]{Sources/VibeAngularExample/source/app.d}
 	\pause
 	\vspace{1cm}
-	\lstinputlisting[basicstyle=\small,caption={},linerange=1-4,
+	\lstinputlisting[basicstyle=\footnotesize,caption={},linerange=1-4,
 		firstnumber=1,xleftmargin=-0.7cm,numbers=none
 	]{Sources/VibeAngularExample/source/weather.d}
 \end{frame}
@@ -181,22 +181,22 @@ Javascript.}
 \subsection{Angular Typescript}
 \begin{frame}
 	\frametitle{AngularJS Typescript}
-	\lstinputlisting[language=typescript,basicstyle=\small,caption={},
+	\lstinputlisting[language=typescript,basicstyle=\footnotesize,caption={},
 		linerange=16-20, firstnumber=16,numbers=none,xleftmargin=-0.7cm
 	]{Sources/VibeAngularExample/public/myapp.ts}
 	\pause
-	\lstinputlisting[language=typescript,basicstyle=\small,caption={},
+	\lstinputlisting[language=typescript,basicstyle=\footnotesize,caption={},
 		linerange=21-24, firstnumber=16,numbers=none,xleftmargin=-0.7cm
 	]{Sources/VibeAngularExample/public/myapp.ts}
 	\pause
-	\lstinputlisting[language=typescript,basicstyle=\small,caption={},
+	\lstinputlisting[language=typescript,basicstyle=\footnotesize,caption={},
 		linerange=25-32, firstnumber=16,numbers=none,xleftmargin=-0.7cm
 	]{Sources/VibeAngularExample/public/myapp.ts}
 \end{frame}
 
 \begin{frame}
 	\frametitle{AngularJS Typescript}
-	\lstinputlisting[language=typescript,basicstyle=\small,caption={},
+	\lstinputlisting[language=typescript,basicstyle=\footnotesize,caption={},
 		linerange=34-39, firstnumber=16,numbers=none,xleftmargin=-1.4cm
 	]{Sources/VibeAngularExample/public/myapp.ts}
 \end{frame}
@@ -249,17 +249,18 @@ dstructtotypescript -i weather.d -p weather.ts -s Weather
 %	\item Use typescript file containing \lstinline@struct Weather@ converted
 %		to Typescript
 %\end{enumerate}
+	\vspace{-1cm}
 \begin{figure}[h]
 	\hspace*{-1cm}
 	\begin{tikzpicture}
 		\node at (-2.1,4) (D) {
-			\lstinputlisting[numbers=none,basicstyle=\scriptsize,caption={},
+			\lstinputlisting[numbers=none,basicstyle=\footnotesize,caption={},
 				linerange=1-4, firstnumber=1
 			]{Sources/VibeAngularExample/source/weather.d}
 		};
 		\pause
 		\node at (-0.5,1) (F) {
-\begin{lstlisting}[language=d,numbers=none,basicstyle=\scriptsize,caption={}]
+\begin{lstlisting}[language=d,numbers=none,basicstyle=\footnotesize,caption={}]
 import std.format;
 
 foreach(it; __traits(allMembers, Weather))
@@ -267,7 +268,7 @@ foreach(it; __traits(allMembers, Weather))
 		};
 		\pause
 		\node at(5,3.0) (T) {
-			\lstinputlisting[numbers=none,language=typescript,basicstyle=\scriptsize,
+			\lstinputlisting[numbers=none,language=typescript,basicstyle=\footnotesize,
 				caption={}, linerange=16-19, firstnumber=16
 			]{Sources/VibeAngularExample/public/myapp.ts}
 		};
@@ -286,6 +287,9 @@ foreach(it; __traits(allMembers, Weather))
 \end{textblock*}
 \end{frame}
 
+
+\fontsize{12pt}{7.2}\selectfont
+
 \begin{frame}
 	\frametitle{Everything is wrong}
 	\begin{itemize}
@@ -297,7 +301,7 @@ foreach(it; __traits(allMembers, Weather))
 		\item How do we communicate with non-developer
 		\item ...
 		\pause
-		\item {\huge How do we deal with change?}
+		\item {\large How do we deal with change?}
 	\end{itemize}
 \end{frame}
 
@@ -405,7 +409,7 @@ foreach(it; __traits(allMembers, Weather))
 			\item A component has
 			\item Components and classes
 			\item Classes have members
-			\item[]
+				\pause
 			\item Connections between the above
 			\begin{itemize}
 				\item UML Association, Aggregation, Composition, Dependency, \(\dots\)
@@ -417,21 +421,21 @@ foreach(it; __traits(allMembers, Weather))
 
 \begin{frame}
 	\frametitle{Using Degenerator 1/2}
-	\lstinputlisting[basicstyle=\small,caption={},linerange=10-15,
+	\lstinputlisting[basicstyle=\footnotesize,caption={},linerange=10-15,
 		firstnumber=10,numbers=none,xleftmargin=-1cm
 	]{Sources/app.d}
 	\pause
-	\lstinputlisting[basicstyle=\small,caption={},linerange=17-19,
+	\lstinputlisting[basicstyle=\footnotesize,caption={},linerange=17-19,
 		firstnumber=17,numbers=none,xleftmargin=-1cm
 	]{Sources/app.d}
 \end{frame}
 \begin{frame}
 	\frametitle{Using Degenerator 2/4}
-	\lstinputlisting[basicstyle=\small,caption={},linerange=45-49,
+	\lstinputlisting[basicstyle=\footnotesize,caption={},linerange=45-49,
 		firstnumber=45,numbers=none,xleftmargin=-1cm
 	]{Sources/app.d}
 	\pause
-	\lstinputlisting[basicstyle=\small,caption={},linerange=61-63,
+	\lstinputlisting[basicstyle=\footnotesize,caption={},linerange=61-63,
 		firstnumber=61,numbers=none,xleftmargin=-1cm
 	]{Sources/app.d}
 \end{frame}
