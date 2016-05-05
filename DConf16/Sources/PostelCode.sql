@@ -3,4 +3,4 @@ CREATE TABLE PostelCode {
 	code LONG,
 	Address_id LONG
 	FOREIGN KEY(Address_id) REFERENCES Address(id) ON UPDATE CASCADE ON DELETE CASCADE
-);
+};

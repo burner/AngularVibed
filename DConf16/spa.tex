@@ -159,7 +159,11 @@ Javascript.}
 \subsection{Vibe.d}
 \begin{frame}
 	\frametitle{Rest Interface Generator}
-	\lstinputlisting[basicstyle=\small,caption={},linerange=5-19,
+	\lstinputlisting[basicstyle=\small,caption={},linerange=5-9,
+		firstnumber=5,numbers=none,xleftmargin=-0.7cm
+	]{Sources/VibeAngularExample/source/app.d}
+	\pause
+	\lstinputlisting[basicstyle=\small,caption={},linerange=10-19,
 		firstnumber=5,numbers=none,xleftmargin=-0.7cm
 	]{Sources/VibeAngularExample/source/app.d}
 \end{frame}
@@ -201,20 +205,19 @@ Javascript.}
 \subsection{Diet}
 \begin{frame}
 	\frametitle{Diet}
-	\lstinputlisting[language=java,basicstyle=\small,caption={},
+	\lstinputlisting[language={},basicstyle=\small,caption={},
 		linerange=4-13,
 		firstnumber=4,numbers=none,xleftmargin=-0.7cm
 	]{Sources/VibeAngularExample/views/index.dt}
 	\pause
-	\lstinputlisting[language=java,basicstyle=\small,caption={},
+	\lstinputlisting[language={},basicstyle=\small,caption={},
 		linerange=1-3,
 		firstnumber=1,numbers=none,xleftmargin=-0.7cm
 	]{Sources/VibeAngularExample/views/index.dt}
-	\pause
 \end{frame}
 \begin{frame}
 	\frametitle{Diet}
-	\lstinputlisting[language=java,basicstyle=\small,caption={},
+	\lstinputlisting[language={},basicstyle=\small,caption={},
 		linerange=1-20,
 		firstnumber=1,numbers=none,xleftmargin=-0.7cm
 	]{Sources/VibeAngularExample/views/main.dt}
@@ -256,7 +259,7 @@ dstructtotypescript -i weather.d -p weather.ts -s Weather
 			]{Sources/VibeAngularExample/source/weather.d}
 		};
 		\pause
-		\node at (-1.0,1) (F) {
+		\node at (-0.5,1) (F) {
 \begin{lstlisting}[language=d,numbers=none,basicstyle=\scriptsize,caption={}]
 import std.format;
 
@@ -264,7 +267,7 @@ foreach(it; __traits(allMembers, Weather))
 \end{lstlisting}
 		};
 		\pause
-		\node at(6,3.0) (T) {
+		\node at(5,3.0) (T) {
 			\lstinputlisting[numbers=none,language=typescript,basicstyle=\scriptsize,
 				caption={}, linerange=16-19, firstnumber=16
 			]{Sources/VibeAngularExample/public/myapp.ts}
@@ -378,7 +381,7 @@ foreach(it; __traits(allMembers, Weather))
 	\end{itemize}
 \end{frame}
 \begin{frame}[plain]
-\begin{textblock*}{0cm}(-1cm,-4.2cm)
+\begin{textblock*}{0cm}(-1cm,-4.4cm)
 	\includegraphics[width=1.0\paperwidth]{picardwtf.jpg}
 \end{textblock*}
 \end{frame}
@@ -525,17 +528,18 @@ pwdHash.typeMappings["MySQL"] = "VARCHAR(128)";
 	\lstinputlisting[basicstyle=\scriptsize,language=SQL,caption={},
 			numbers=none,xleftmargin=-0.5cm]
 	{Sources/Address.sql}
+	\vspace{12mm}
 	\lstinputlisting[basicstyle=\scriptsize,language=SQL,caption={},numbers=none
 		,xleftmargin=-0.5cm]
-	{Sources/User.sql}
-	\lstinputlisting[basicstyle=\scriptsize,language=SQL,caption={},numbers=none
-			,xleftmargin=-0.5cm]
-	{Sources/PostelCode.sql}
+	{Sources/Address_User.sql}
 \end{column}
 \begin{column}{0.49\linewidth}
 	\lstinputlisting[basicstyle=\scriptsize,language=SQL,caption={},numbers=none
-		,xleftmargin=-0.7cm]
-	{Sources/Address_User.sql}
+		,xleftmargin=-0.4cm]
+	{Sources/User.sql}
+	\lstinputlisting[basicstyle=\scriptsize,language=SQL,caption={},numbers=none
+			,xleftmargin=-0.4cm]
+	{Sources/PostelCode.sql}
 \end{column}
 		
 \end{columns}
@@ -572,6 +576,7 @@ pwdHash.typeMappings["MySQL"] = "VARCHAR(128)";
 		\item dstructtotypescript
 			\url{https://github.com/burner/dstructtotypescript}
 		\item C4 Architecture (Simon Brown) \url{http://www.codingthearchitecture.com}
+		\item Structurizr \url{https://structurizr.com/}
 		\item Degenerator \url{https://github.com/burner/Degenerator}
 	\end{itemize}
 \end{frame}
