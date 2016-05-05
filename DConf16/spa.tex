@@ -41,12 +41,13 @@
 		ref,return,scope,shared,short,static,struct,string,wstring,dstring,
 		super,switch,synchronized,template,this,throw,true,try,typedef,typeid,
 		typeof,ubyte,ucent,uint,ulong,union,unittest,ushort,version,void,
-		volatile,wchar,while,with,size_t,hash_t,number
+		volatile,wchar,while,with,size_t,hash_t,number,extends
 	},
 	sensitive=True,
 	morecomment=[l]{//},
 	morecomment=[s]{/\*}{\*/},
-	morestring=[b]"
+	morestring=[b]",
+	morestring=[b]'
 }
 
 
@@ -158,43 +159,64 @@ Javascript.}
 \subsection{Vibe.d}
 \begin{frame}
 	\frametitle{Rest Interface Generator}
-	\lstinputlisting[basicstyle=\tiny,caption={},linerange=5-19,
-		firstnumber=5
+	\lstinputlisting[basicstyle=\small,caption={},linerange=5-19,
+		firstnumber=5,numbers=none,xleftmargin=-0.7cm
+	]{Sources/VibeAngularExample/source/app.d}
+\end{frame}
+\begin{frame}
+	\frametitle{Rest Interface Generator}
+	\lstinputlisting[basicstyle=\small,caption={},linerange=30-34,
+		firstnumber=30,numbers=none,xleftmargin=-1.5cm
 	]{Sources/VibeAngularExample/source/app.d}
 	\pause
-	\lstinputlisting[basicstyle=\tiny,caption={},linerange=30-34,
-		firstnumber=30
-	]{Sources/VibeAngularExample/source/app.d}
-	\pause
-	\lstinputlisting[basicstyle=\tiny,caption={},linerange=1-4,
-		firstnumber=1
+	\vspace{1cm}
+	\lstinputlisting[basicstyle=\small,caption={},linerange=1-4,
+		firstnumber=1,xleftmargin=-0.7cm,numbers=none
 	]{Sources/VibeAngularExample/source/weather.d}
 \end{frame}
 
 \subsection{Angular Typescript}
 \begin{frame}
 	\frametitle{AngularJs Typescript}
-	\lstinputlisting[language=typescript,basicstyle=\tiny,caption={},
-		linerange=16-40, firstnumber=16
+	\lstinputlisting[language=typescript,basicstyle=\small,caption={},
+		linerange=16-20, firstnumber=16,numbers=none,xleftmargin=-0.7cm
+	]{Sources/VibeAngularExample/public/myapp.ts}
+	\pause
+	\lstinputlisting[language=typescript,basicstyle=\small,caption={},
+		linerange=21-24, firstnumber=16,numbers=none,xleftmargin=-0.7cm
+	]{Sources/VibeAngularExample/public/myapp.ts}
+	\pause
+	\lstinputlisting[language=typescript,basicstyle=\small,caption={},
+		linerange=25-32, firstnumber=16,numbers=none,xleftmargin=-0.7cm
+	]{Sources/VibeAngularExample/public/myapp.ts}
+\end{frame}
+
+\begin{frame}
+	\frametitle{AngularJs Typescript}
+	\lstinputlisting[language=typescript,basicstyle=\small,caption={},
+		linerange=34-39, firstnumber=16,numbers=none,xleftmargin=-1.4cm
 	]{Sources/VibeAngularExample/public/myapp.ts}
 \end{frame}
 
 \subsection{Diet}
 \begin{frame}
 	\frametitle{Diet}
-	\lstinputlisting[language=java,basicstyle=\scriptsize,caption={},
+	\lstinputlisting[language=java,basicstyle=\small,caption={},
 		linerange=4-13,
-		firstnumber=4
+		firstnumber=4,numbers=none,xleftmargin=-0.7cm
 	]{Sources/VibeAngularExample/views/index.dt}
 	\pause
-	\lstinputlisting[language=java,basicstyle=\scriptsize,caption={},
+	\lstinputlisting[language=java,basicstyle=\small,caption={},
 		linerange=1-3,
-		firstnumber=1
+		firstnumber=1,numbers=none,xleftmargin=-0.7cm
 	]{Sources/VibeAngularExample/views/index.dt}
 	\pause
-	\lstinputlisting[language=java,basicstyle=\scriptsize,caption={},
+\end{frame}
+\begin{frame}
+	\frametitle{Diet}
+	\lstinputlisting[language=java,basicstyle=\small,caption={},
 		linerange=1-20,
-		firstnumber=1
+		firstnumber=1,numbers=none,xleftmargin=-0.7cm
 	]{Sources/VibeAngularExample/views/main.dt}
 \end{frame}
 
@@ -204,11 +226,11 @@ Javascript.}
 \begin{frame}
 	\frametitle{Dataflow from the Server to the Frontend and back again}
 	\lstinputlisting[basicstyle=\small,title={Dlang},linerange=1-4,
-		firstnumber=1
+		firstnumber=1,numbers=none
 	]{Sources/VibeAngularExample/source/weather.d}
 	\pause
 	\lstinputlisting[language=typescript,basicstyle=\small,
-		title={Typescript}, linerange=16-19, firstnumber=16
+		title={Typescript}, linerange=16-19, firstnumber=16,numbers=none
 	]{Sources/VibeAngularExample/public/myapp2.ts}
 \end{frame}
 
@@ -226,23 +248,24 @@ dstructtotypescript -i weather.d -p weather.ts -s Weather
 %		to Typescript
 %\end{enumerate}
 \begin{figure}[h]
+	\hspace*{-1cm}
 	\begin{tikzpicture}
-		\node at (0,3) (D) {
-			\lstinputlisting[numbers=none,basicstyle=\tiny,caption={},
+		\node at (-2.1,4) (D) {
+			\lstinputlisting[numbers=none,basicstyle=\scriptsize,caption={},
 				linerange=1-4, firstnumber=1
 			]{Sources/VibeAngularExample/source/weather.d}
 		};
 		\pause
-		\node at (0.8,1) (F) {
-\begin{lstlisting}[language=d,numbers=none,basicstyle=\tiny,caption={}]
+		\node at (-1.0,1) (F) {
+\begin{lstlisting}[language=d,numbers=none,basicstyle=\scriptsize,caption={}]
 import std.format;
 
 foreach(it; __traits(allMembers, Weather))
 \end{lstlisting}
 		};
 		\pause
-		\node at(6,2.0) (T) {
-			\lstinputlisting[numbers=none,language=typescript,basicstyle=\tiny,
+		\node at(6,3.0) (T) {
+			\lstinputlisting[numbers=none,language=typescript,basicstyle=\scriptsize,
 				caption={}, linerange=16-19, firstnumber=16
 			]{Sources/VibeAngularExample/public/myapp.ts}
 		};
@@ -392,39 +415,43 @@ foreach(it; __traits(allMembers, Weather))
 
 \begin{frame}
 	\frametitle{Using Degenerator 1/2}
-	\lstinputlisting[basicstyle=\tiny,caption={},linerange=10-15,
-		firstnumber=10
+	\lstinputlisting[basicstyle=\small,caption={},linerange=10-15,
+		firstnumber=10,numbers=none,xleftmargin=-1cm
 	]{Sources/app.d}
 	\pause
-	\lstinputlisting[basicstyle=\tiny,caption={},linerange=17-19,
-		firstnumber=17
+	\lstinputlisting[basicstyle=\small,caption={},linerange=17-19,
+		firstnumber=17,numbers=none,xleftmargin=-1cm
+	]{Sources/app.d}
+\end{frame}
+\begin{frame}
+	\frametitle{Using Degenerator 2/4}
+	\lstinputlisting[basicstyle=\small,caption={},linerange=45-49,
+		firstnumber=45,numbers=none,xleftmargin=-1cm
 	]{Sources/app.d}
 	\pause
-	\lstinputlisting[basicstyle=\tiny,caption={},linerange=45-49,
-		firstnumber=45
-	]{Sources/app.d}
-	\pause
-	\lstinputlisting[basicstyle=\tiny,caption={},linerange=61-63,
-		firstnumber=61
+	\lstinputlisting[basicstyle=\small,caption={},linerange=61-63,
+		firstnumber=61,numbers=none,xleftmargin=-1cm
 	]{Sources/app.d}
 \end{frame}
 
 \begin{frame}
-	\frametitle{Using Degenerator 2/2}
-	\lstinputlisting[basicstyle=\tiny,caption={},linerange=61-63,
-		firstnumber=61
+	\frametitle{Using Degenerator 3/4}
+	\lstinputlisting[basicstyle=\small,caption={},linerange=61-63,
+		firstnumber=61,numbers=none,xleftmargin=-1cm
 	]{Sources/app.d}
 	\pause
-	\lstinputlisting[basicstyle=\tiny,caption={},linerange=68-71,
-		firstnumber=68
+	\lstinputlisting[basicstyle=\small,caption={},linerange=68-71,
+		firstnumber=68,numbers=none,xleftmargin=-1cm
+	]{Sources/app.d}
+\end{frame}
+\begin{frame}
+	\frametitle{Using Degenerator 4/4}
+	\lstinputlisting[basicstyle=\small,caption={},linerange=77-79,
+		firstnumber=77,numbers=none,xleftmargin=-1cm
 	]{Sources/app.d}
 	\pause
-	\lstinputlisting[basicstyle=\tiny,caption={},linerange=77-79,
-		firstnumber=77
-	]{Sources/app.d}
-	\pause
-	\lstinputlisting[basicstyle=\tiny,caption={},linerange=90-92,
-		firstnumber=90
+	\lstinputlisting[basicstyle=\small,caption={},linerange=90-92,
+		firstnumber=90,numbers=none,xleftmargin=-1cm
 	]{Sources/app.d}
 \end{frame}
 
@@ -440,7 +467,7 @@ foreach(it; __traits(allMembers, Weather))
 		\end{itemize}
 	\end{itemize}
 	\pause
-	\begin{lstlisting}[basicstyle=\scriptsize]
+	\begin{lstlisting}[basicstyle=\small,xleftmargin=0.2cm,numbers=none]
 struct Type {
     string name;
     string[string] typeMapping;
@@ -451,15 +478,15 @@ pwdHash.typeMappings["D"] = "string";
 pwdHash.typeMappings["MySQL"] = "VARCHAR(128)";
 \end{lstlisting}
 	\vspace{-1cm}
-\begin{itemize}
-	\item Similar types with different behaviour across containers
-\end{itemize}
+%\begin{itemize}
+%	\item Similar types with different behaviour across containers
+%\end{itemize}
 \end{frame}
 
 \begin{frame}
 	\frametitle{Generating}
-	\lstinputlisting[basicstyle=\scriptsize,caption={},linerange=106-110,
-		firstnumber=106
+	\lstinputlisting[basicstyle=\small,caption={},linerange=106-110,
+		firstnumber=106,numbers=none,xleftmargin=-1.1cm
 	]{Sources/app.d}
 \end{frame}
 
@@ -493,21 +520,25 @@ pwdHash.typeMappings["MySQL"] = "VARCHAR(128)";
 
 \begin{frame}
 	\frametitle{Generating the Database CREATE TABLE Statements}
-	\begin{columns}[T]
-		\begin{column}{0.49\linewidth}
-	\lstinputlisting[basicstyle=\scriptsize,language=SQL,caption={},numbers=none]
-		{Sources/Address.sql}
-	\lstinputlisting[basicstyle=\scriptsize,language=SQL,caption={},numbers=none]
-			{Sources/User.sql}
-	\lstinputlisting[basicstyle=\scriptsize,language=SQL,caption={},numbers=none]
-			{Sources/PostelCode.sql}
-		\end{column}
-		\begin{column}{0.49\linewidth}
-	\lstinputlisting[basicstyle=\scriptsize,language=SQL,caption={},numbers=none]
-			{Sources/Address_User.sql}
-		\end{column}
+\begin{columns}[T]
+\begin{column}{0.49\linewidth}
+	\lstinputlisting[basicstyle=\scriptsize,language=SQL,caption={},
+			numbers=none,xleftmargin=-0.5cm]
+	{Sources/Address.sql}
+	\lstinputlisting[basicstyle=\scriptsize,language=SQL,caption={},numbers=none
+		,xleftmargin=-0.5cm]
+	{Sources/User.sql}
+	\lstinputlisting[basicstyle=\scriptsize,language=SQL,caption={},numbers=none
+			,xleftmargin=-0.5cm]
+	{Sources/PostelCode.sql}
+\end{column}
+\begin{column}{0.49\linewidth}
+	\lstinputlisting[basicstyle=\scriptsize,language=SQL,caption={},numbers=none
+		,xleftmargin=-0.7cm]
+	{Sources/Address_User.sql}
+\end{column}
 		
-	\end{columns}
+\end{columns}
 \end{frame}
 
 \begin{frame}
