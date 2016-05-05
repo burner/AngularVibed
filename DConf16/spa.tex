@@ -41,7 +41,7 @@
 		ref,return,scope,shared,short,static,struct,string,wstring,dstring,
 		super,switch,synchronized,template,this,throw,true,try,typedef,typeid,
 		typeof,ubyte,ucent,uint,ulong,union,unittest,ushort,version,void,
-		volatile,wchar,while,with,size_t,hash_t,number,extends
+		volatile,wchar,while,with,size_t,hash_t,number,extends,constructor
 	},
 	sensitive=True,
 	morecomment=[l]{//},
@@ -107,7 +107,6 @@ Javascript.}
 		\item Repetition repetition repetition
 		\item No templates
 		\item No compile time function execution
-			\pause
 		\item No compile time
 	\end{itemize}
 	\note[item]{Very quickly go through the points and stop for dramatic pause}
@@ -151,14 +150,14 @@ Javascript.}
 			\pause
 		\item async DB connectivity for MongoDB, Redis, MySQL
 		\item You don't need to care about async
-		\item Rest interface generator
 		\item Web interface generator
+		\item REST interface generator
 	\end{itemize}
 \end{frame}
 
 \subsection{Vibe.d}
 \begin{frame}
-	\frametitle{Rest Interface Generator}
+	\frametitle{REST Interface Generator}
 	\lstinputlisting[basicstyle=\small,caption={},linerange=5-9,
 		firstnumber=5,numbers=none,xleftmargin=-0.7cm
 	]{Sources/VibeAngularExample/source/app.d}
@@ -168,7 +167,7 @@ Javascript.}
 	]{Sources/VibeAngularExample/source/app.d}
 \end{frame}
 \begin{frame}
-	\frametitle{Rest Interface Generator}
+	\frametitle{REST Interface Generator}
 	\lstinputlisting[basicstyle=\small,caption={},linerange=30-34,
 		firstnumber=30,numbers=none,xleftmargin=-1.5cm
 	]{Sources/VibeAngularExample/source/app.d}
@@ -181,7 +180,7 @@ Javascript.}
 
 \subsection{Angular Typescript}
 \begin{frame}
-	\frametitle{AngularJs Typescript}
+	\frametitle{AngularJS Typescript}
 	\lstinputlisting[language=typescript,basicstyle=\small,caption={},
 		linerange=16-20, firstnumber=16,numbers=none,xleftmargin=-0.7cm
 	]{Sources/VibeAngularExample/public/myapp.ts}
@@ -196,7 +195,7 @@ Javascript.}
 \end{frame}
 
 \begin{frame}
-	\frametitle{AngularJs Typescript}
+	\frametitle{AngularJS Typescript}
 	\lstinputlisting[language=typescript,basicstyle=\small,caption={},
 		linerange=34-39, firstnumber=16,numbers=none,xleftmargin=-1.4cm
 	]{Sources/VibeAngularExample/public/myapp.ts}
@@ -343,7 +342,7 @@ foreach(it; __traits(allMembers, Weather))
 	\end{itemize}
 \end{frame}
 
-\section{Introducing C4 Architecture}
+\section{Introducing the C4 Architecture}
 \begin{frame}[plain]
 \begin{textblock*}{0cm}(-1cm,-4.7cm)
 	\includegraphics[width=1.0\paperwidth]{c4overview.png}
