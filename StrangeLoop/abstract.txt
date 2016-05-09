@@ -1,0 +1,13 @@
+Single-Page-Applications (SPA) have many advantages over more traditionally
+websites. The development of those SPA requires the use of multiple
+technologies. Angular2 is eyeing for the throne on the frontend side. The D
+Programming Language is an often underestimated candidate for the backend
+side. Its compile time introspection features allows to develop powerful REST
+APIs in an efficent, natural feeling way. 
+
+But all that is not enough to make the development of a SPA a success. The
+development process is equaliy as important if not more important. The
+traditionally Waterfall model no longer scales and there are also shortcomings
+with agile methods. This talk will present a small but powerful tool that
+feels agile, enables the user to keep the documentation in sync with the code,
+and free's the user from writing nearly all boilerplate.
