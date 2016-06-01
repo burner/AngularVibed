@@ -1,42 +1,42 @@
-The lifecycle of any software is more than just its releases and the set of
-tools used to create it.
-The architecture of the software, the languages used to write, the deployment
-mechanisms, and the developer teams will change over time.
-The only constant is change itself.
+The lifecycle of any software is more than just its releases and the tools
+used to create it.
+The architecture of the software, the languages used to write it, the
+deployment mechanisms, and the developer teams change over time.
+The only constant is the change itself.
 Traditional methods of software development either fail in modeling this
 change, or make it very hard to aggregate all the changes accross all levels
 of abstraction in a DRY way.
-This talk will present a unified process model/library that naturally spans
+This talk presents a unified process model/library that naturally spans
 from the initial sketch of any software system to the members of all classes.
 Additionally, the model can be stored in a version control system in the most
 natural way.
 
-The lifecycle of any software is more than just its releases and the set of
-tools used to create it.
-The architecture of the software, the languages used to write, the deployment
-mechanisms, and the developer teams will change over time.
-The only constant is change itself.
+The lifecycle of any software is more than just its releases and the tools
+used to create it.
+The architecture of the software, the languages used to write it, the deployment
+mechanisms, and the developer teams change over time.
+The only constant is the change itself.
 Traditional methods of software development either fail in modeling this
 change, or make it very hard to aggregate all the changes accross all levels
 of abstraction in a DRY way.
 The ominous water-scrum-fall software development process is a really good
 example for such a bad process [1].
-This talk will present a unified process model/library that naturally spans
+This talk presents a unified process model/library that naturally spans
 from the initial sketch of any software system to the members of all classes.
 This unified process model stores all information of the model in a single place.
 The informations of the model can be stored in a version control system (VCS),
 as the model is created in a textual, line based fashion.
 This way all benefits of a VCS can be utilized.
-Furthermore, the model is based around abstractions that allow to describe any
+Furthermore, the model is based on abstractions that allow to describe any
 software system in a logical way.
-Specific information or views of specific abstractin levels can then be
+Specific information or views of specific abstraction levels can then be
 directly extracted from this model.
 Additionally, the presented solution automates many tasks such as architecture
 visualisation, database table creation, creation of database access code,
 creation of documentation skeletons, and many more.
-All automations are target programming language independed.
-This way the presented process model allows for rapidly pivoting any aspect of
-the ideas of the software system, succesfully scaling the idea, automating
+All automations are target programming language independent.
+This way, the presented process model allows for rapidly pivoting any aspect of
+the ideas of the software system, successfully scaling the idea, automating
 many repetitive tasks, quickly introducing new people to the project, and
 generally keeping things DRY.
 
