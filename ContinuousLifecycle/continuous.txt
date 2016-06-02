@@ -4,7 +4,7 @@ The architecture of the software, the languages used to write it, the
 deployment mechanisms, and the developer teams change over time.
 The only constant is the change itself.
 Traditional methods of software development either fail in modeling this
-change, or make it very hard to aggregate all the changes accross all levels
+change, or make it very hard to aggregate all the changes across all levels
 of abstraction in a DRY way.
 This talk presents a unified process model/library that naturally spans
 from the initial sketch of any software system to the members of all classes.
@@ -17,7 +17,7 @@ The architecture of the software, the languages used to write it, the deployment
 mechanisms, and the developer teams change over time.
 The only constant is the change itself.
 Traditional methods of software development either fail in modeling this
-change, or make it very hard to aggregate all the changes accross all levels
+change, or make it very hard to aggregate all the changes across all levels
 of abstraction in a DRY way.
 The ominous water-scrum-fall software development process is a really good
 example for such a bad process [1].
