@@ -102,14 +102,12 @@
 \maketitle
 
 \section{Make C++ Great Again}
-\subsection{Procedural}
 \begin{frame}{Procedural}
 \lstinputlisting[basicstyle=\footnotesize,caption={},linerange=13-24,
 	firstnumber=1,numbers=none,xleftmargin=-5mm
 ]{fun_with_d.d}
 \end{frame}
 
-\subsection{Object Oriented}
 \begin{frame}{Object Oriented 1/2}
 \begin{columns}[T]
 \begin{column}{0.49\linewidth}
@@ -117,9 +115,9 @@
 	firstnumber=1,numbers=none,xleftmargin=-5mm
 ]{fun_with_d.d}
 \end{column}
-\begin{column}{0.49\linewidth}
+\begin{column}{0.50\linewidth}
 \lstinputlisting[basicstyle=\footnotesize,caption={},linerange=120-126,
-	firstnumber=1,numbers=none,xleftmargin=-5mm
+	firstnumber=1,numbers=none,xleftmargin=-1mm
 ]{fun_with_d.d}
 \end{column}
 \end{columns}
@@ -134,13 +132,71 @@
 ]{fun_with_d.d}
 \end{frame}
 
-\section{Everything is wrong}
-\begin{frame}
-\begin{textblock*}{0cm}(-1cm,-4.2cm)
-	\includegraphics[width=1.0\paperwidth]{picarddday.jpg}
-\end{textblock*}
+\begin{frame}{Templates 1/3}
+\lstinputlisting[basicstyle=\footnotesize,caption={},linerange=41-55,
+	firstnumber=1,numbers=none,xleftmargin=-5mm
+]{fun_with_d.d}
 \end{frame}
 
+\begin{frame}{Templates 2/3}
+\lstinputlisting[basicstyle=\footnotesize,caption={},linerange=61-67,
+	firstnumber=1,numbers=none,xleftmargin=-5mm
+]{fun_with_d.d}
+\end{frame}
+
+\begin{frame}{Templates 3/3}
+\lstinputlisting[basicstyle=\footnotesize,caption={},linerange=69-78,
+	firstnumber=1,numbers=none,xleftmargin=-5mm
+]{fun_with_d.d}
+\end{frame}
+
+\begin{frame}{Compile Time Function Execution (CTFE)}
+\lstinputlisting[basicstyle=\footnotesize,caption={},linerange=153-166,
+	firstnumber=1,numbers=none,xleftmargin=-5mm
+]{fun_with_d.d}
+\end{frame}
+
+\subsection{Functional}
+\begin{frame}{Functional}
+\lstinputlisting[basicstyle=\footnotesize,caption={},linerange=186-200,
+	firstnumber=1,numbers=none,xleftmargin=-5mm
+]{fun_with_d.d}
+\end{frame}
+
+\begin{frame}{Pure Fun(ctions)}
+\lstinputlisting[basicstyle=\footnotesize,caption={},linerange=214-226,
+	firstnumber=1,numbers=none,xleftmargin=-5mm
+]{fun_with_d.d}
+\end{frame}
+
+\begin{frame}{Static Introspection 1/2}
+\lstinputlisting[basicstyle=\footnotesize,caption={},linerange=260-264,
+	firstnumber=1,numbers=none,xleftmargin=-5mm
+]{fun_with_d.d}
+
+\lstinputlisting[basicstyle=\footnotesize,caption={},linerange=283-288,
+	firstnumber=1,numbers=none,xleftmargin=-5mm
+]{fun_with_d.d}
+\end{frame}
+
+\begin{frame}{Static Introspection 1/2}
+\lstinputlisting[basicstyle=\footnotesize,caption={},linerange=266-281,
+	firstnumber=1,numbers=none,xleftmargin=-8mm
+]{fun_with_d.d}
+\end{frame}
+
+\begin{frame}{tl/dr}
+\begin{itemize}
+	\item Template \lstinline@struct@es/\lstinline@class@es
+	\item User Defined Attributes \lstinline@\@Bar("Whatever")@
+	\item \lstinline@foreach@ and Ranges
+	\item \lstinline@module@s
+	\item Compiler dmd, gdc and ldc
+	\item C ABI, C++ ABI compatibility
+\end{itemize}
+\end{frame}
+
+\section{Degenerator}
 \begin{frame}
 	\frametitle{Everything is still wrong}
 	\begin{itemize}
@@ -149,9 +205,9 @@
 		\onslide<7->{\item UML} \onslide<8->{\(\leftarrow\) just kill me
 			already}
 
-		\item[] { \onslide<1-8>{\includegraphics[width=0.3\textwidth]{Stick1.png}}
-			\only<9>{\includegraphics[width=0.3\textwidth]{Stick.png}}
-			\only<10>{\hspace{-1.31mm}\includegraphics[width=0.3\textwidth]
+		\item[] { \onslide<1-8>{\includegraphics[width=0.2\textwidth]{Stick1.png}}
+			\only<9>{\includegraphics[width=0.2\textwidth]{Stick.png}}
+			\only<10>{\hspace{-1.31mm}\includegraphics[width=0.2\textwidth]
 				{Stick2.png}}
 		}
 
@@ -167,18 +223,18 @@
 \begin{frame}
 	\frametitle{What do we want}
 	\begin{itemize}
-		\item Speak about the system at different levels of detail\\
+		\item Speak about the system at different levels of detail
 		with different people
 		\item Quickly introduce people to the system
-		\item Keep data classes (Model) synchronized across
+		\item Keep classes (Model) synchronized across
 		\begin{itemize}
 			\item Frontend
 			\item Server
-			\item Database
+			\item \(\dots\)
 		\end{itemize}
 		\item Write only one model for everything, to keep stuff in sync
-		\item Have description line based, because git
-		\item Generate everything possible from the model
+		\item Have a line based description, because git
+		\item Generate everything possible from the Model
 	\end{itemize}
 \end{frame}
 

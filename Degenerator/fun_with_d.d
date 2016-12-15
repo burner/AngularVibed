@@ -156,9 +156,9 @@ unittest {
 }
 
 unittest {
-	enum str = `int inc(int z) { 
+	enum str = "int inc(int z) { 
 		return z + 1; 
-	}`;
+	}";
 
 	mixin(str);
 	
@@ -190,7 +190,7 @@ unittest {
 	import std.algorithm.sorting : sort;
 	import std.array : array;
 
-	writefln("unique words %d",
+	writefln("number unique words %d",
 			readText(__FILE__)
 				.splitter
 				.array
@@ -211,16 +211,24 @@ unittest {
 
 // pure functions
 
+immutable val = 1.0;
+
 pure float pureFun(float a) {
-	return a - 1.0;
+	return a - val;
 }
 
 pure float pureFun2(float a) {
 	return pureFun(a);
 }
 
+pure unittest {
+	auto f = pureFun2(1.0);
+}
+
+float val2 = 2.0;
+
 float purePain(float b) {
-	return b - 2.0;
+	return b - val2;
 }
 
 pure float purePain2(float b) {
@@ -309,6 +317,6 @@ unittest {
 	try {
 		fun();
 	} catch(Exception e) {
-
+		throw e;
 	}
 }
