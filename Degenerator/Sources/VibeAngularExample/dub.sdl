@@ -1,0 +1,6 @@
+name "vibeangularexample"
+description "A simple vibe.d server application."
+copyright "Copyright © 2016, burner"
+authors "burner"
+dependency "vibe-d" version="~>0.7.28"
+versions "VibeDefaultMain"

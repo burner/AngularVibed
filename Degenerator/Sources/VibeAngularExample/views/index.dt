@@ -1,0 +1,13 @@
+- void javascript(string name)
+	script(src="#{name}")
+
+doctype html
+html(ng-app="myapp")
+	head
+		title DConf 2016 Weather
+		- javascript("./angular.js");
+		- javascript("./angular-route.js");
+		- javascript("./myapp.js");
+
+	body
+		div(ng-view)
