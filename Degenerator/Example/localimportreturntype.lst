@@ -1,0 +1,10 @@
+       |void main() {
+      2|        auto someFile = getFile("file.txt");
+      1|        assert(someFile.isOpen());
+       |}
+       |
+       |auto getFile(string fn) {
+       |        import std.stdio : File;
+      1|        return File(fn, "w");
+       |}
+localimportreturntype.d is 100% covered
