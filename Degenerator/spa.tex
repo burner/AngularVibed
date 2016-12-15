@@ -1,8 +1,6 @@
-\documentclass[xelatex,14pt]{beamer}
+\documentclass[xelatex,10pt]{beamer}
 \usetheme{metropolis}
-%\usefonttheme{professionalfonts} % using non standard fonts for beamer
-%\usefonttheme{serif}
-%\usepackage{helvet}
+
 \usepackage[english]{babel}
 \usepackage{graphicx}
 \usepackage{textpos}
@@ -11,10 +9,8 @@
 \definecolor{dkgreen}{rgb}{0,0.6,0}
 \usepackage{pgfpages}
 \usepackage{listings}
-%\usepackage[]{helvet}
 
 \setsansfont[BoldFont={OpenSans-Bold}]{Fira Sans}
-%\renewcommand*{\bibfont}{\tiny}
 
 \lstdefinelanguage{d}{
 	morekeywords={abstract,alias,align,asm,assert,auto,body,bool,break,byte,
@@ -94,7 +90,6 @@
 \usepackage[disable]{todonotes}
 
 \title{An Introduction to D and the Degenerator}
-\subtitle{Or why D is just awesome}
 \author{Robert "burner" Schadek}
 \date{Jan 10, 2017}
 
@@ -185,7 +180,7 @@
 ]{fun_with_d.d}
 \end{frame}
 
-\begin{frame}{tl/dr}
+\begin{frame}{tl;dr}
 \begin{itemize}
 	\item Template \lstinline@struct@es/\lstinline@class@es
 	\item User Defined Attributes \lstinline@\@Bar("Whatever")@
@@ -198,7 +193,7 @@
 
 \section{Degenerator}
 \begin{frame}
-	\frametitle{Everything is still wrong}
+	\frametitle{Everything is wrong}
 	\begin{itemize}
 		\onslide<1->{\item Waterfall Model} \onslide<2->{\(\leftarrow\) 
 			no change, never}
@@ -232,9 +227,10 @@
 			\item Server
 			\item \(\dots\)
 		\end{itemize}
-		\item Write only one model for everything, to keep stuff in sync
+		\item Write only one model for everything, to keep stuff DRY
 		\item Have a line based description, because git
-		\item Generate everything possible from the Model
+		\item Generate everything possible from the Model, to keep Model and
+Source in sync
 	\end{itemize}
 \end{frame}
 
@@ -272,7 +268,7 @@
 			\pause
 		\item Structurizr generates code
 			\pause
-		\item {\huge Only Java and .net}
+		\item Only Java and .net
 	\end{itemize}
 \end{frame}
 \begin{frame}[plain]
