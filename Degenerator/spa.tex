@@ -193,6 +193,25 @@
 
 \section{Degenerator}
 \begin{frame}
+	\frametitle{What do we want}
+	\begin{itemize}
+		\item Speak about the system at different levels of detail
+		with different people
+		\item Quickly introduce people to the system
+		\item Write only one model for everything, to keep stuff DRY
+		\item Keep classes (Model) synchronized across
+		\begin{itemize}
+			\item Frontend
+			\item Server
+			\item \(\dots\)
+		\end{itemize}
+		\item Have a line based description, because git
+		\item Generate everything possible from the Model, to keep Model and
+Source in sync
+	\end{itemize}
+\end{frame}
+
+\begin{frame}
 	\frametitle{Everything is wrong}
 	\begin{itemize}
 		\onslide<1->{\item Waterfall Model} \onslide<2->{\(\leftarrow\) 
@@ -211,26 +230,6 @@
 		\onslide<3->{\item Hacking} \onslide<4->{\(\leftarrow\) no plan
 			to speak of, just change}
 		
-	\end{itemize}
-	
-\end{frame}
-
-\begin{frame}
-	\frametitle{What do we want}
-	\begin{itemize}
-		\item Speak about the system at different levels of detail
-		with different people
-		\item Quickly introduce people to the system
-		\item Keep classes (Model) synchronized across
-		\begin{itemize}
-			\item Frontend
-			\item Server
-			\item \(\dots\)
-		\end{itemize}
-		\item Write only one model for everything, to keep stuff DRY
-		\item Have a line based description, because git
-		\item Generate everything possible from the Model, to keep Model and
-Source in sync
 	\end{itemize}
 \end{frame}
 
@@ -309,12 +308,8 @@ Source in sync
 
 \begin{frame}
 	\frametitle{Using Degenerator 1/2}
-	\lstinputlisting[basicstyle=\footnotesize,caption={},linerange=10-15,
+	\lstinputlisting[basicstyle=\footnotesize,caption={},linerange=41-55,
 		firstnumber=10,numbers=none,xleftmargin=-1cm
-	]{Sources/app.d}
-	\pause
-	\lstinputlisting[basicstyle=\footnotesize,caption={},linerange=17-19,
-		firstnumber=17,numbers=none,xleftmargin=-1cm
 	]{Sources/app.d}
 \end{frame}
 \begin{frame}
@@ -386,8 +381,9 @@ pwdHash.typeMappings["MySQL"] = "VARCHAR(128)";
 
 \begin{frame}
 	\frametitle{The World}
-	\begin{textblock*}{0cm}(-1.2cm,-2.0cm)
-		\includegraphics[width=1.0\paperwidth]{theworld.png}
+	\begin{textblock*}{0cm}(-0.0cm,-4.0cm)
+		\centering
+		\includegraphics[width=0.8\paperwidth]{systemcontext.png}
 	\end{textblock*}
 \end{frame}
 
@@ -398,17 +394,18 @@ pwdHash.typeMappings["MySQL"] = "VARCHAR(128)";
 	\end{textblock*}
 \end{frame}
 
-%\begin{frame}
-%	\frametitle{Actors, Containers and Components}
-%	\begin{textblock*}{0cm}(-1.2cm,-2.0cm)
-%		\includegraphics[width=1.0\paperwidth]{theworldcontainercomponents.png}
-%	\end{textblock*}
-%\end{frame}
+\begin{frame}
+	\frametitle{Containers, Components, and Classes}
+	\begin{textblock*}{0cm}(-1.0cm,-4.0cm)
+		\centering
+		\includegraphics[width=1.0\paperwidth]{AwesomeSoftware_only.png}
+	\end{textblock*}
+\end{frame}
 
 \begin{frame}
 	\frametitle{Awesome Software System}
 	\begin{textblock*}{0cm}(-1.0cm,-4.0cm)
-		\includegraphics[width=1.0\paperwidth]{AwesomeSoftware.png}
+		\includegraphics[width=1.0\paperwidth]{all.png}
 	\end{textblock*}
 \end{frame}
 
