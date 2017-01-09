@@ -51,20 +51,22 @@ void main() {
 	auto system = world.newSoftwareSystem("AwesomeSoftware");
 	system.description = "The awesome system to develop.";
 
-	Container frontend = system.getOrNewContainer("Frontend");
+	Container frontend = system.newContainer("Frontend");
 	frontend.technology = "Angular2";
-	auto frontendUserCtrl = frontend.getOrNewComponent("frontUserCtrl");
-	auto frontendStuffCtrl = frontend.getOrNewComponent("frontStuffCtrl");
+
+	auto frontendUserCtrl = frontend.newComponent("frontUserCtrl");
+	auto frontendStuffCtrl = frontend.newComponent("frontStuffCtrl");
+
 	auto hardware = world.newHardwareSystem("SomeHardware");
 
 	auto system2 = world.newSoftwareSystem("LagacySoftwareSystem");
 	system2.description = "You don't want to touch this.";
 
-	auto usersFrontend = world.getOrNew!Connection("userDepFrontend",
+	auto usersFrontend = world.newConnection("userDepFrontend",
 		world.getActor("The Users"), frontendUserCtrl
 	);
 	usersFrontend.description = "Uses the frontend to do stuff.";
-	world.getOrNew!Connection("userDepStuffCtrl",
+	world.newConnection("userDepStuffCtrl",
 		users, frontendStuffCtrl
 	).description = "Uses the Stuff Logic of the Awesome Software";
 	usersFrontend.description = "Uses the frontend to do stuff.";
@@ -75,66 +77,65 @@ void main() {
 		assert(ca !is null);
 	}
 
-	world.getOrNew!Connection("adminUser",
+	world.newConnection("adminUser",
 		admin, frontendUserCtrl
 	).description = "Manager Users";
 
-	Container server = system.getOrNewContainer("Server");
+	Container server = system.newContainer("Server");
 	server.technology = "D";
-	world.getOrNew!Connection("frontendServerDep", frontend, server)
+	world.newConnection("frontendServerDep", frontend, server)
 		.description = "HTTPS";
 
-	world.getOrNew!Connection("serverSS2", server, system2).description =
+	world.newConnection("serverSS2", server, system2).description =
 		"To bad we have to use that.";
 
-	auto serverUserCtrl = server.getOrNewComponent("serverUserCtrl");
-	auto frontendHardwareLink = world.getOrNew!Connection("frontendUsesHardware",
+	auto serverUserCtrl = server.newComponent("serverUserCtrl");
+	auto frontendHardwareLink = world.newConnection("frontendUsesHardware",
 		serverUserCtrl, hardware
 	);
 
-	auto serverUserSub = serverUserCtrl.getOrNewSubComponent("utils").
+	auto serverUserSub = serverUserCtrl.newSubComponent("utils").
 		description = "Best component name ever!";
 
-	userCtrl(world, server);
-
-	auto database = system.getOrNewContainer("Database");
+	auto database = system.newContainer("Database");
 	database.technology = "MySQL";
-	world.getOrNew!Connection("serverDatabase",
+	world.newConnection("serverDatabase",
 		server, database
 	).description = "CRUD";
 
-	Type str = world.getType!Type("String");
-	Type integer = world.getType!Type("Int");
+	Type str = world.getType("String");
+	Type integer = world.getType("Int");
 
 	Class user = userClass(world, frontendUserCtrl, serverUserCtrl, database);
 	Class group = groupClass(world, frontendUserCtrl, serverUserCtrl, database);
+	userCtrl(world, server);
 
 	Class address = addressClass(world,
 		frontendUserCtrl, serverUserCtrl, database
 	);
 
-	MemberFunction func = address.getOrNew!MemberFunction("func");
+	MemberFunction func = address.newMemberFunction("func");
 	func.returnType = integer;
 
-	func.getOrNew!MemberVariable("a").type = integer;
-	func.getOrNew!MemberVariable("b").type = str;
+	func.addParameter("a", integer);
+	func.addParameter("b", str);
 
-	Aggregation userAddress = world.getOrNew!Aggregation("AddressUser",
+	Aggregation userAddress = world.newAggregation("AddressUser",
 		address, user
 	);
 
-	Class postalCode = world.getOrNewClass("PostalCode", database,
+	Class postalCode = world.newClass("PostalCode", database,
 			serverUserCtrl);
 	postalCode.containerType["MySQL"] = "Table";
-	MemberVariable pcID = postalCode.getOrNew!MemberVariable("id");
+	MemberVariable pcID = postalCode.newMemberVariable("id");
 	pcID.type = integer;
 	pcID.addLangSpecificAttribute("MySQL", "PRIMARY KEY");
 	pcID.addLangSpecificAttribute("MySQL", "AUTO INCREMENT");
 	pcID.addLangSpecificAttribute("D", "const");
-	MemberVariable pcCode = postalCode.getOrNew!MemberVariable("code");
+	MemberVariable pcCode = postalCode.newMemberVariable("code");
 	pcCode.type = integer;
 
-	auto addressPC = world.getOrNew!Composition("addressPostalCode",
+	auto addressPC = world.newComposition("addressPostalCode",
 		address, postalCode
 	);
 	addressPC.fromType = world.newType("PostalCode[]");

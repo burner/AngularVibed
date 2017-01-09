@@ -198,7 +198,7 @@
 		\item Speak about the system at different levels of detail
 		with different people
 		\item Quickly introduce people to the system
-		\item Write only one model for everything, to keep stuff DRY
+		\item Write only one model (Architecture) for everything, to keep stuff DRY
 		\item Keep classes (Model) synchronized across
 		\begin{itemize}
 			\item Frontend
@@ -206,8 +206,8 @@
 			\item \(\dots\)
 		\end{itemize}
 		\item Have a line based description, because git
-		\item Generate everything possible from the Model, to keep Model and
-Source in sync
+		\item Generate everything possible from the Model, because we are lazy
+		\item Keep Architecture and Source in sync in face of change
 	\end{itemize}
 \end{frame}
 
@@ -234,11 +234,21 @@ Source in sync
 \end{frame}
 
 \section{Introducing the C4 Architecture}
-\begin{frame}[plain]
-\begin{textblock*}{0cm}(-1cm,-4.7cm)
-	\includegraphics[width=1.0\paperwidth]{c4overview.png}
-\end{textblock*}
+\begin{frame}
+	\frametitle{Opinionated Architecture (C4)}
+	Four Levels
+	\begin{itemize}
+		\item Systemcontext
+		\item Containers
+		\item Components
+		\item Classes
+	\end{itemize}
 \end{frame}
+%\begin{frame}[plain]
+%\begin{textblock*}{0cm}(-1cm,-4.7cm)
+%	\includegraphics[width=1.0\paperwidth]{c4overview.png}
+%\end{textblock*}
+%\end{frame}
 \begin{frame}[plain]
 \begin{textblock*}{0cm}(-1cm,-4.7cm)
 	\includegraphics[width=1.0\paperwidth]{c4systemcontext.png}
@@ -280,18 +290,15 @@ Source in sync
 \begin{frame}
 	\frametitle{How do we approach the development}
 	\begin{itemize}
-		\item We're not gonne create a new language\pause, at first\pause,
-			most likely
-			\pause
 		\item The model (ast) is pretty simple
 			\pause
 		\begin{itemize}
 			\item The world
 			\item The world has
 			\item Actors, software/hardware systems
-			\item A software systems has
+			\item A software systems have
 			\item Containers (everything with a unique pid)
-			\item A container has
+			\item A container have
 			\item Components (think \lstinline@module@) and classes
 			\item A component has
 			\item Components and classes
@@ -308,38 +315,36 @@ Source in sync
 
 \begin{frame}
 	\frametitle{Using Degenerator 1/2}
-	\lstinputlisting[basicstyle=\footnotesize,caption={},linerange=41-55,
+	\lstinputlisting[basicstyle=\footnotesize,caption={},linerange=41-61,
 		firstnumber=10,numbers=none,xleftmargin=-1cm
 	]{Sources/app.d}
 \end{frame}
 \begin{frame}
 	\frametitle{Using Degenerator 2/4}
-	\lstinputlisting[basicstyle=\footnotesize,caption={},linerange=45-49,
+	\lstinputlisting[basicstyle=\footnotesize,caption={},linerange=106-107,
 		firstnumber=45,numbers=none,xleftmargin=-1cm
 	]{Sources/app.d}
+	\vfill
 	\pause
-	\lstinputlisting[basicstyle=\footnotesize,caption={},linerange=61-63,
+	\lstinputlisting[basicstyle=\footnotesize,caption={},linerange=128-135,
 		firstnumber=61,numbers=none,xleftmargin=-1cm
 	]{Sources/app.d}
 \end{frame}
 
 \begin{frame}
 	\frametitle{Using Degenerator 3/4}
-	\lstinputlisting[basicstyle=\small,caption={},linerange=61-63,
+	\lstinputlisting[basicstyle=\small,caption={},linerange=113-121,
 		firstnumber=61,numbers=none,xleftmargin=-1cm
-	]{Sources/app.d}
-	\pause
-	\lstinputlisting[basicstyle=\small,caption={},linerange=68-71,
-		firstnumber=68,numbers=none,xleftmargin=-1cm
 	]{Sources/app.d}
 \end{frame}
 \begin{frame}
 	\frametitle{Using Degenerator 4/4}
-	\lstinputlisting[basicstyle=\small,caption={},linerange=77-79,
+	\lstinputlisting[basicstyle=\small,caption={},linerange=123-125,
 		firstnumber=77,numbers=none,xleftmargin=-1cm
 	]{Sources/app.d}
+	\vfill
 	\pause
-	\lstinputlisting[basicstyle=\small,caption={},linerange=90-92,
+	\lstinputlisting[basicstyle=\small,caption={},linerange=138-142,
 		firstnumber=90,numbers=none,xleftmargin=-1cm
 	]{Sources/app.d}
 \end{frame}
@@ -374,7 +379,7 @@ pwdHash.typeMappings["MySQL"] = "VARCHAR(128)";
 
 \begin{frame}
 	\frametitle{Generating}
-	\lstinputlisting[basicstyle=\small,caption={},linerange=106-110,
+	\lstinputlisting[basicstyle=\small,caption={},linerange=146-153,
 		firstnumber=106,numbers=none,xleftmargin=-1.1cm
 	]{Sources/app.d}
 \end{frame}
@@ -416,7 +421,6 @@ pwdHash.typeMappings["MySQL"] = "VARCHAR(128)";
 	\lstinputlisting[basicstyle=\scriptsize,language=SQL,caption={},
 			numbers=none,xleftmargin=-0.5cm]
 	{Sources/Address.sql}
-	\vspace{12mm}
 	\lstinputlisting[basicstyle=\scriptsize,language=SQL,caption={},numbers=none
 		,xleftmargin=-0.5cm]
 	{Sources/Address_User.sql}
@@ -437,15 +441,16 @@ pwdHash.typeMappings["MySQL"] = "VARCHAR(128)";
 	\frametitle{What can we generate}
 	\begin{itemize}
 		\item Diagrams describing the project at different levels of detail
+		\begin{itemize}
+			\item Adjustable via Source
+		\end{itemize}
 		\item Database schema
 		\item phpmyadmin clones
 		\item Database access code
 		\item Data objects (D struct/class, Typescript interface/class, \(\dots\)
 		\item Server skeletons
 		\item Frontend skeletons
-			\pause
-		\item Graphviz mostly done, MySQL is getting there, Vibe.d and
-			Angular2 next
+		\item Documentation skeleton with diagrams
 	\end{itemize}
 \end{frame}
 
@@ -459,6 +464,7 @@ pwdHash.typeMappings["MySQL"] = "VARCHAR(128)";
 \begin{frame}
 	\frametitle{The End}
 	\begin{itemize}
+		\item DLang \url{https://dlang.org}
 		\item vibe.d \url{https://vibed.org}
 		\item typescript \url{https://www.typescriptlang.org/}
 		\item dstructtotypescript
